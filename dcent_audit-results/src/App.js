@@ -16,7 +16,6 @@ function App() {
     <>
       <Layout>
         <Routes>
-
           {/* Home */}
           <Route path="/" exact element={<Home/>}/>
 
@@ -31,7 +30,6 @@ function App() {
 
           {/* CTA */}
           <Route path="/cta" exact element={<CTAPage/>}/>
-
         </Routes>
       </Layout>
     </>

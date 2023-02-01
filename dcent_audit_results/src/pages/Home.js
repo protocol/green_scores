@@ -6,7 +6,7 @@ import Hero from '../components/Hero';
 
 const Home = () => {
   return (
-    <div className='bg-white'>
+    <div className='bg-white relative'>
       <Hero/>
     </div>
   )

@@ -10,6 +10,7 @@ import {dataRequirements,
         embodiedEmissions,
         reportingMethods,
         auditingProcess,
+        energyMatching,
          } from "../utils/FindingsTable";
 
 const FindingsSummary = () => {
@@ -20,8 +21,11 @@ const FindingsSummary = () => {
             {/* Data Requirements: */}
             <FindingsTable data={dataRequirements}/>
 
-            {/* Emissions Profile & Green Energy Matching: */}
+            {/* Emissions Profile: */}
             <FindingsTable data={emissionsProfile}/>
+
+            {/* Green Energy Matching: */}
+            <FindingsTable data={energyMatching}/>
 
             {/* Embodied Emissions: */}
             <FindingsTable data={embodiedEmissions}/>

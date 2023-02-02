@@ -62,34 +62,57 @@ export const dataRequirements = {
     }
 };
 
-// Emissions Profile & Green Energy Matching: 
+// Emissions Profile: 
 export const emissionsProfile = {
-    criteria: "Emissions Profile & Green Energy Matching",
-    titles: ["Tier", "Methodology", "Matching", "Frequency"],
+    criteria: "Emissions Profile",
+    titles: ["Tier", "Methodology", "Frequency"],
     bronze : [
         "Market-based attributional carbon accounting approach",
-        "Energy consumption profile is matched to Energy Attribution Credits (EAC) OR provide evidence of green electricity products from their energy supplier",
-        "Annual",
+        "Quarterly",
     ],
     silver : [
         "Market-based attributional carbon accounting approach",
-        "Energy consumption profile is matched to Energy Attribution Credits (EAC) OR provide evidence of green electricity products from their energy supplier",
         "Quarterly",
     ],
     gold: [
         "Consequential carbon accounting approach",
+        "Quarterly",
+    ],
+    results : {
+        findings: [
+            "Carbon Accounting exercises will commence in 2023",
+        ],
+        dcent_tier: {
+            tier: sustainabilityTiers.not_available.tier,
+            tier_img: sustainabilityTiers.not_available.image,
+        }
+    }
+};
+
+// Green Energy Matching: 
+export const energyMatching = {
+    criteria: "Green Energy Matching",
+    titles: ["Tier", "Matching", "Frequency"],
+    bronze : [
+        "Energy consumption profile is matched to Energy Attribution Credits (EAC) OR provide evidence of green electricity products from their energy supplier",
+        "Annual",
+    ],
+    silver : [
+        "Energy consumption profile is matched to Energy Attribution Credits (EAC) OR provide evidence of green electricity products from their energy supplier",
+        "Quarterly",
+    ],
+    gold: [
         "Every kWh is matched by onsite renewable energy generation (see reporting methods) OR emissions due to grid draw must be matched to avoided emissions accounted for by GCs, with a temporal resolution of one hour, obtained either through: i. Power Purchase Agreements (PPAs) for new generation ii. GCs sold on the open marke",
         "Quarterly",
     ],
     results : {
         findings: [
-            "Carbon Accounting exercise will start in 2023",
             "Renewable energy reported on monthly power bills, pending certificates from utility provider",
             "Quarterly",
         ],
         dcent_tier: {
-            tier: sustainabilityTiers.not_available.tier,
-            tier_img: sustainabilityTiers.not_available.image,
+            tier: sustainabilityTiers.silver.tier,
+            tier_img: sustainabilityTiers.silver.image,
         }
     }
 };
@@ -113,7 +136,7 @@ export const embodiedEmissions = {
     ],
     results : {
         findings: [
-            "Embodied emissions work will start in 2023",
+            "Embodied emissions work will commence in 2023",
             "N/A.",
         ],
         dcent_tier: {

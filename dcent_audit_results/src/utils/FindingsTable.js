@@ -102,7 +102,7 @@ export const energyMatching = {
         "Quarterly",
     ],
     gold: [
-        "Every kWh is matched by onsite renewable energy generation (see reporting methods) OR emissions due to grid draw must be matched to avoided emissions accounted for by GCs, with a temporal resolution of one hour, obtained either through: i. Power Purchase Agreements (PPAs) for new generation ii. GCs sold on the open marke",
+        "Every kWh is matched by onsite renewable energy generation (see reporting methods) OR emissions due to grid draw must be matched to avoided emissions accounted for by GCs, with a temporal resolution of one hour, obtained either through: i. Power Purchase Agreements (PPAs) for new generation ii. GCs sold on the open market",
         "Quarterly",
     ],
     results : {

@@ -23,37 +23,37 @@ export const dataRequirements = {
     criteria: "Data Requirements",
     titles: ["Tier", "Location", "Water Use", "Energy Use", "Renewables", "Hardware", "On-site Renewable Energy"],
     bronze : [
-        "Approximate location is reported on Template for auditing", 
-        "Water use is reported on Template for auditing",
-        "Energy use is reported on Template for auditing",
-        "Renewable energy purchases are reported on template for auditing",
+        "Approximate location is reported for auditing", 
+        "Water use is reported for auditing",
+        "Energy use is reported for auditing",
+        "Renewable energy purchases are reported for auditing",
         "Not Applicable",
         "Not Applicable"
     ],
     silver : [
-        "Refer to Sustainablity Tier Docs",
-        "Granular water use is reported on Template for auditing",
-        "Granular energy use is reported on Template for auditing",
-        "Granular renewable energy purchases are reported on template for auditing",
-        "HW setup is provided for auditing",
+        "Approximate location is reported for auditing",
+        "Granular water use is reported from utility bills for auditing",
+        "Granular energy use is reported from utility bills for auditing",
+        "Granular renewable energy purchases are reported for auditing",
+        "Hardware setup (with pictures/videos) is provided for auditing",
         "Not Applicable"
     ],
     gold: [
-        "Refer to Sustainablity Tier Docs",
-        "Refer to Sustainablity Tier Docs",
-        "Refer to Sustainablity Tier Docs",
-        "Refer to Sustainablity Tier Docs",
-        "Refer to Sustainablity Tier Docs",
-        "Renewable energy is generated on-site, and setup details are provided for auditing"
+        "Approximate location is reported for auditing",
+        "Granular water use is reported from utility bills for auditing",
+        "Granular energy use is reported from utility bills for auditing",
+        "Granular renewable energy purchases are reported for auditing",
+        "Hardware setup (with pictures/videos) is provided for auditing",
+        "Renewable energy is generated on-site, and setup details or documentation of contract are provided for auditing"
     ],
     results : {
         findings: [
             "Address reported on Template",
             "N/A Water isn't used to cool Filecoin IT infrastructure",
-            "Granular electricity consumption reported in kWh",
+            "Granular electricity consumption reported from utility bills and API in kWh",
             "Granular renewable energy purchases report in kWh on monthly power bills",
             "Details of hardware setup including rack config, minerIDs, and IP address provided",
-            "Solar panels are installed on-site, and project workbook and inspection report were provided",
+            "Solar panels are installed on-site, project workbook and inspection report were provided, and Inverter API was provided",
         ], 
         dcent_tier: {
             tier: sustainabilityTiers.gold.tier,
@@ -123,16 +123,16 @@ export const embodiedEmissions = {
     criteria: "Embodied Emissions",
     titles: ["Tier", "Hardware Specs Required for LCA", "Carbon Credits"],
     bronze : [
-        "N/A: Refer to Sustainablity Tier Docs",
-        "N/A: Refer to Sustainablity Tier Docs",
+        "N/A: Refer to Green Guidance Docs",
+        "N/A: Refer to Green Guidance Docs",
     ],
     silver : [
-        "N/A: Refer to Sustainablity Tier Docs",
-        "N/A: Refer to Sustainablity Tier Docs",
+        "Hardware configuration required for Embodied Emissions Life-Cycle Analysis (LCA) are provided to Filecoin Green",
+        "Hardware embodied emissions are matched to high-quality carbon credits (removals or offsets), per Annex 3 in Green Guidance",
     ],
     gold: [
-        "Hardware specs required for LCA are provided to Filecoin Green",
-        "Hardware embodied emissions are matched to carbon credits per Annex 3 in Green Guidance",
+        "Hardware configuration required for Embodied Emissions Life-Cycle Analysis (LCA) are provided to Filecoin Green",
+        "Hardware embodied emissions are matched to high-quality carbon credits (removals or offsets) curated by Filecoin Green, per Annex 3 in Green Guidance",
     ],
     results : {
         findings: [
@@ -159,25 +159,25 @@ export const reportingMethods = {
 
     ],
     silver : [
-        "Not Applicable",
+        "Location confirmed on monthly water or power bill, or documentation of contract",
         "Exact use reported on water bill, water meter data, and/or documetion of contract with provider",
         "Exact use reported on power bill, some electric meter data, and/or documetion of contract with provider",
         "Documentation of green electricity products from energy supplier, e.g., Green Tarriffs",
         "Details including pics or videos of hardware set-up",
     ],
     gold: [
-        "Not Applicable",
-        "Not Applicable",
+        "Location confirmed on monthly water or power bill, or documentation of contract",
+        "Exact use reported on water bill, water meter data, and/or documetion of contract with provider",
         "Comprehensive meter data is provided showing every kWh used",
-        "Not Applicable",
-        "Not Applicable",
+        "Documentation of green electricity products from energy supplier, e.g., Green Tarriffs",
+        "Details including pics or videos of hardware set-up",
     ],
     results : {
         findings: [
-            "Utility bill from Nievwestroom",
-            "N/A - Water is not used to cool Filecoin networ",
+            "Utility bill from Nievwestroom provided",
+            "N/A - Water is not used to cool hardware used for Filecoin network",
             "Metered solar and storage data is provided through API, pending sealing API data",
-            "* Renewable energy reported on power bills. Pending certificates from utility provider",
+            "Renewable energy reported on power bills. Pending certificates from utility provider",
             "Detailed solar project workbook, inspection report, rack config, minerIDs, and IP addresses provided",
         ],
         dcent_tier: {

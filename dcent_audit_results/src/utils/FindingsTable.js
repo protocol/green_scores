@@ -194,17 +194,17 @@ export const auditingProcess = {
     titles: ["Tier", "Audit Type", "Frequency","Results"],
     bronze : [
         "Remote",
-        "Not Applicable",
+        "Yearly",
         "Auditor confirms location, water usage, energy consumption data, and renewable energy purchases by cross referencing all available materials",
     ],
     silver : [
-        "On-site",
-        "Yearly",
+        "Remote",
+        "Quarterly",
         "Auditor confirms location, water usage, energy consumption data, and renewable energy purchases by cross referencing all available materials",
 
     ],
     gold: [
-        "On-site",
+        "Remote & On-site",
         "Quarterly",
         "Auditor confirms location, water usage, energy consumption data, and renewable energy purchases by cross referencing all available materials",
 

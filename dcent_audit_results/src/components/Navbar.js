@@ -63,7 +63,7 @@ const Navbar = () => {
                 {/* For large and Medium-sized Screens */}
                 <div className="flex justify-between">
                     <div className=" flex space-x-3 items-center">
-                        <img onClick={() => navigate("/")} src={logo} className="h-12 mr-3 sm:h-12 border-green-500 border-2 shadow-lg" alt="Filecoin Green Logo"></img>
+                        <img onClick={() => navigate("/")} src={logo} className="h-12 mr-3 sm:h-12 border-green-500 border-2 shadow-lg hover:cursor-pointer" alt="Filecoin Green Logo"></img>
                         <h1 className=" font-bold xl:text-2xl lg:text-xl md:text-md sm:text-sm leading-6 text-white">{navbarData.title}</h1>
                     </div>
                     <div className="hidden sm:flex flex flex-row space-x-4 items-center">

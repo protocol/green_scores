@@ -20,7 +20,7 @@
     "Coutry": {
       "type": "string",
       "mandatory": true,
-      "placeholder": "NL" //ISO 3166-1 alpha-2 two letter country code
+      "placeholder": "NL" 
 
     },
     "City": {
@@ -54,5 +54,5 @@
       "type": "integer",
       "value": 0,
       "mandatory": true
-    },
+    }
 }

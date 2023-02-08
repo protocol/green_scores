@@ -41,7 +41,6 @@ const Navbar = () => {
         damping: 30,
     };
 
-
     // Sets the theme:
     if (isOn) {
         document.documentElement.classList.remove('dark')
@@ -98,10 +97,10 @@ const Navbar = () => {
                             </motion.div>    
                         </div>
                     </div>
-                    <div className="flex flex-row justify-center items-center sm:hidden">
+                    <div className="flex flex-row justify-center items-center sm:hidden space-x-3">
                         {/* Theme switch */}
-                        <div onClick= {() => {setshow(!show); toggleTheme();}}
-                            className={`h-[30px] w-[60px] rounded-[50px] bg-zinc-100 p-[2.5px] mr-3 shadow-inner hover:cursor-pointer dark:bg-zinc-700 ${ isOn && 'place-content-end'}`}>
+                        <div onClick= {toggleTheme}
+                            className={`flex h-[30px] w-[60px] rounded-[50px] bg-zinc-100 p-[2.5px] shadow-inner hover:cursor-pointer dark:bg-zinc-700 ${ isOn && 'place-content-end'}`}>
                             <motion.div 
                                 className="flex h-[25px] w-[25px] items-center justify-center rounded-full bg-black/90"
                                 layout

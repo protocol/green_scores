@@ -17,7 +17,7 @@ const FindingsSummary = () => {
 
     return (
         <>
-        <div className="mb-20">
+        <div className="dark:bg-gray-900">
             {/* Data Requirements: */}
             <FindingsTable data={dataRequirements}/>
 

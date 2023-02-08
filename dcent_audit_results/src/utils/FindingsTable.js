@@ -81,6 +81,7 @@ export const emissionsProfile = {
     results : {
         findings: [
             "Carbon Accounting exercises will commence in 2023",
+            "",
         ],
         dcent_tier: {
             tier: sustainabilityTiers.not_available.tier,

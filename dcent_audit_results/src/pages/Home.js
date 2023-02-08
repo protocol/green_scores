@@ -6,10 +6,11 @@ import Hero from '../components/Hero';
 
 const Home = () => {
   return (
-    <div className='bg-white relative'>
+    <div className='bg-white relative dark:bg-gray-900'>
       <Hero/>
     </div>
   )
 }
 
 export default Home;
+

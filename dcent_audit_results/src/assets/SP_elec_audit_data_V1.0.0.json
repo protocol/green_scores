@@ -1,0 +1,105 @@
+{
+    "Record Type": {
+        "type": "string",
+        "mandatory": true,
+        "placeholder": "Electricity Audit Data"
+    },
+    
+    "Record Version": {
+        "type": "string",
+        "mandatory": true,
+        "placeholder": "1.0.0"
+    },
+
+    "Storage Provider Name": { 
+      "type": "string",
+      "mandatory": false,
+      "placeholder": "DCENT"
+    },
+
+    "Coutry": {
+      "type": "string",
+      "mandatory": true,
+      "placeholder": "NL" // ISO 3166-1 alpha-2 two letter country code
+
+    },
+    "City": {
+      "type": "string",
+      "mandatory": false
+
+    },
+    "ZIP or Location Code": {
+      "type": "string",
+      "mandatory": false
+    },
+
+    "minerIDs": {
+      "type": "array",
+      "mandatory": true,
+      "placeholder": "[“f01199442”, “f01199430”, “f01201327”, “f01207045”, “f01208862”]"
+    },
+
+    "Accounting Period Start": {
+      "type": "date",
+      "mandatory": true
+    },
+
+    "Accounting Period End": {
+      "type": "date",
+      "mandatory": true
+    },
+
+    "Delivered Electricity (kWh)": {
+      "min": 0,
+      "type": "integer",
+      "value": 0,
+      "mandatory": true
+    },
+
+     "Returned Electricity (kWh)": {
+      "min": 0,
+      "type": "integer",
+      "value": 0,
+      "mandatory": true
+    },
+
+     "Net Electricity Consumed (kWh)": {
+      "min": 0,
+      "type": "integer",
+      "value": 0,
+      "mandatory": true
+    },
+
+    "Onsite Renewable Energy Produced (kWh)": {
+      "min": 0,
+      "type": "integer",
+      "value": 0,
+      "mandatory": true
+    },
+
+    "Total Electricity Used (kWh)": {
+      "min": 0,
+      "type": "integer",
+      "value": 0,
+      "mandatory": true
+    },
+
+    "Renewable Electricity Purchased Through Utility (kWh)": {
+      "min": 0,
+      "type": "integer",
+      "value": 0,
+      "mandatory": true
+    },
+
+    "Renewable Electricity Purchased Through Utility Source": {
+      "type": "string",
+      "mandatory": false,
+      "placeholder": "Solar PV"
+    },
+
+    "Renewable Electricity Purchased Documentation": {
+      "type": "documents",
+      "mandatory": true,
+      "placeholder": "Solar PV RECs"
+    },
+}

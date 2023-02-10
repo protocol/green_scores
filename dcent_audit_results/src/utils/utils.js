@@ -11,7 +11,7 @@ export const navbarData = {
 export const homeHeroData = {
     title: ["2022", " Audit Results"],
     description: [
-        "To generate the sustainibility claim tier, the survey taken by storage providers & their provided documents are reviewed and validated against our sustainability matrix.",
+        "To generate the sustainibility claim tier, the survey taken by storage providers & their provided documents are reviewed & validated against our sustainability matrix.",
         "Learn About Green Scores"
     ],
     audit_requirements : {

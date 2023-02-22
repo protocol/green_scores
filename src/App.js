@@ -8,7 +8,7 @@ import { Routes, Route } from "react-router-dom"
 // components
 import Navbar from './components/Navbar';
 import GreenScore from "./pages/GreenScore";
-import AuditorAdmin from "./pages/AuditorAdmin";
+import GenerateGreenScore from "./pages/GenerateGreenScore";
 import SPAdmin from "./pages/SPAdmin";
 
 function App() {
@@ -25,8 +25,8 @@ function App() {
           {/* Green Score */}
           <Route path="/green_score" exact element={<GreenScore/>}/>
 
-          {/* Auditor Admin - Generate Green Score */}
-          <Route path="/auditor_admin" exact element={<AuditorAdmin/>}/>
+          {/* Generate Green Score */}
+          <Route path="/generate_green_score" exact element={<GenerateGreenScore/>}/>
 
           {/* SP Admin - Claim Green Score */}
           <Route path="/sp_admin" exact element={<SPAdmin/>}/>

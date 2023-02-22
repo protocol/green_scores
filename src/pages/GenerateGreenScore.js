@@ -1,13 +1,13 @@
 import React from 'react'
 
-const AuditorAdmin = () => {
+const GenerateGreenScore = () => {
   return (
     <div className='bg-white relative dark:bg-gray-900'>
         <p>
-            Auditor Admin Page
+            Generate Green Score
         </p>
     </div>
   )
 }
 
-export default AuditorAdmin
+export default GenerateGreenScore

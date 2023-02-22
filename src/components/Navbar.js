@@ -14,6 +14,9 @@ import { navbarData } from "../utils/utils";
 // framer
 import { motion } from "framer-motion"
 
+// connect button
+import { ConnectButton } from '@rainbow-me/rainbowkit';
+
 const Navbar = () => {
 
     // Collapsed menu hook:
@@ -77,12 +80,8 @@ const Navbar = () => {
                             {navbarData.detailed_findings_btn_txt}
                         </button>
 
-                        {/* Btn: Learn More */}
-                        <button className="flex p-2 font-semibold text-xs text-black bg-green-500 border border-green-500 focus:outline-none focus:bg-white focus:text-black duration-150 justify-center items-center">
-                            <Link to="https://filecoin-green.gitbook.io/filecoin-green-documentation/readme-1/storage-providers-tiered-sustainability-claims">
-                                {navbarData.learn_more_btn_txt}
-                            </Link>
-                        </button>
+                        {/* Btn: Connect Wallet */}
+                        <ConnectButton className="flex justify-center items-center text-xs"/>
 
                         {/* Theme switch */}
                         <div onClick={toggleTheme} className={`flex h-[30px] w-[60px] rounded-[50px] bg-zinc-100 p-[2.5px] shadow-inner hover:cursor-pointer dark:bg-zinc-700 ${ isOn && 'place-content-end'}`}>

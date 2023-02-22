@@ -59,21 +59,21 @@ const Navbar = () => {
   
     return (
         <div className="bg-black shadow-xl w-full sticky top-0 z-50 dark:border-green-500 dark:border-b">
-            <nav className="2xl:container 2xl:mx-auto sm:py-6 sm:px-7 py-5 px-4 border-b border-black">
-                {/* For large and Medium-sized Screens */}
+            <nav className="py-4 px-5 border-b border-black">
+                {/* For large and medium-sized Screens */}
                 <div className="flex justify-between">
-                    <div className=" flex space-x-3 items-center">
-                        <img onClick={() => navigate("/")} src={logo} className="h-12 mr-3 sm:h-12 border-green-500 border-2 shadow-lg hover:cursor-pointer" alt="Filecoin Green Logo"></img>
-                        <h1 className=" font-bold xl:text-2xl lg:text-xl md:text-md sm:text-sm leading-6 text-white">{navbarData.title}</h1>
+                    <div className="flex space-x-3 items-center">
+                        <img onClick={() => navigate("/")} src={logo} className="h-12 mr-3 border-green-500 border-2 shadow-lg hover:cursor-pointer" alt="Filecoin Green Logo"></img>
+                        <h1 className="font-bold xl:text-lg lg:text-lg md:text-md sm:text-sm text-white">{navbarData.title}</h1>
                     </div>
                     <div className="hidden sm:flex flex flex-row space-x-4 items-center">
                         {/* Btn: Audit Overview */}
-                        <button onClick={() => navigate("/")} className="flex p-2 font-semibold text-xs text-green-400 bg-black border-2 border-green-400 focus:outline-none focus:bg-white focus:text-black duration-150 justify-center items-center">
+                        <button onClick={() => navigate("/")} className="flex p-2 font-semibold text-xs text-green-400 bg-black border border-green-400 focus:outline-none focus:bg-white focus:text-black duration-150 justify-center items-center">
                             {navbarData.audit_overview_btn_txt}
                         </button>
 
                         {/* Btn: Detailed Findings */}
-                        <button onClick={() => navigate("/findings")} className="flex p-2 font-semibold text-xs text-green-400 bg-black border-2 border-green-400 focus:outline-none focus:bg-white focus:text-black duration-150 justify-center items-center">
+                        <button onClick={() => navigate("/findings")} className="flex p-2 font-semibold text-xs text-green-400 bg-black border border-green-400 focus:outline-none focus:bg-white focus:text-black duration-150 justify-center items-center">
                             {navbarData.detailed_findings_btn_txt}
                         </button>
 

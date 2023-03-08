@@ -59,7 +59,7 @@ const Navbar = () => {
   
     return (
         <div className="bg-black shadow-xl w-full sticky top-0 z-50 dark:border-green-500 dark:border-b">
-            <nav className="2xl:container 2xl:mx-auto sm:py-6 sm:px-7 py-5 px-4 border-b border-black">
+            <nav className="ml-4 mr-4 py-4 px-4 border-b border-black">
                 {/* For large and Medium-sized Screens */}
                 <div className="flex justify-between">
                     <div className=" flex space-x-3 items-center">

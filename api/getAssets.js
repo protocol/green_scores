@@ -31,14 +31,11 @@ export const getAsset = async () => {
      * parameters: asset block CID
      */
     
-    let length = searchAssetsResponse.result.assets.length; 
-    console.log("Length of all assets in co2.storage: ", length);
-
     let totalResponses = [];
 
     for(let i = 0; i < searchAssetsResponse.result.assets.length; i++){
 
-        console.dir("!!! ASSET #:", i,  " \n");
+        console.dir("ASSET #:", i,  " \n");
         const listedAsset = searchAssetsResponse.result.assets[i]
         if(listedAsset) {
             let getAssetResponse = await fgStorage.getAsset(listedAsset.block)
@@ -56,9 +53,7 @@ export const getAsset = async () => {
 
     await new Promise(resolve => setTimeout(resolve, 1000));
 
-    // return the list: 
     return totalResponses;
-
 };
 
 getAsset();

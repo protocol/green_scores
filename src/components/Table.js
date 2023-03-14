@@ -12,7 +12,7 @@ const Table = ({data}) => {
 
     return (
         <>
-        <div className="py-10 px-12">
+        <div className="py-8">
             <div className="px-5 md:px-10 py-4 md:py-7 bg-gradient-to-r from-green-100 via-grey-50 to-blue-100 border border-black shadow-lg dark:border-green-500 dark:border-2">
                 <div className="sm:flex items-center justify-between">
                     <p className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold leading-normal text-gray-800">{data.criteria}</p>

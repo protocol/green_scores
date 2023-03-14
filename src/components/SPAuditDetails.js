@@ -40,7 +40,7 @@ const SPAuditDetails = () => {
                     </div>
                     {!data ? 
                     (
-                        <div className='mt-60 text-center justify-center'>
+                        <div className='mt-60 text-center justify-center h-screen dark:bg-gray-900'>
                              <ScaleLoader
                                 color={color}
                                 loading={loading}

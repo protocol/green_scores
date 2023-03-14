@@ -1,15 +1,17 @@
 // react
-import React, {useState, useEffect } from 'react'
+import React, {useState, useEffect, CSSProperties} from 'react'
 import SPAssetResultCard from './SPAssetResultCard';
 import { Link } from 'react-router-dom';
 
-// data:
+// loader:
+import ScaleLoader from "react-spinners/ScaleLoader";
 
 const SPAuditDetails = () => {
 
-    let [spData, setSpData] = useState(null)
     const [data, setData] = React.useState(null);
-
+    let [loading, setLoading] = useState(true);
+    let [color, setColor] = useState("#39FF14");
+  
 
     useEffect(() => {
       
@@ -19,6 +21,7 @@ const SPAuditDetails = () => {
         {
             // ACTUAL
             setData(data);
+            setLoading(!loading);
         });
     }, []);
 
@@ -35,7 +38,18 @@ const SPAuditDetails = () => {
                                 </h1>
                             </div>
                     </div>
-                    {!data ? "Loading..." 
+                    {!data ? 
+                    (
+                        <div className='mt-60 text-center justify-center'>
+                             <ScaleLoader
+                                color={color}
+                                loading={loading}
+                                size={150}
+                                aria-label="Loading Spinner"
+                                data-testid="loader"
+                            />
+                        </div>
+                    )
                     : (
                         // Mapping Data Results
                         data.result.map((result, index) => (
@@ -65,8 +79,8 @@ const SPAuditDetails = () => {
                                 </div>
 
                                 {/* Block CID */}
-                                <div className='mt-4 flex inline-flex text-xs font-semibold text-black dark:text-green-400'>
-                                    <div className='p-2 bg-green-100 border border-black'>
+                                <div className='mt-4 text-xs font-semibold text-black dark:text-black flex grid lg:grid-cols-2 lg:gap-6 md:grid-cols-2 md:gap-6 sm:grid-cols-1 sm:gap-5 xs:grid-cols-1 xs:gap-4'>
+                                    <div className='overflow-hidden p-2 bg-green-100 border border-black'>
                                         <h1 className="">
                                             <Link target={"_blank"} rel="noreferrer" to={`https://explore.ipld.io/#/explore/${result.result.block}`}>
                                                 Explore Block CID: {result.result.block}
@@ -74,7 +88,7 @@ const SPAuditDetails = () => {
                                         </h1>       
                                     </div>
 
-                                    <div className='p-2 bg-blue-100 ml-5 border border-black'>
+                                    <div className='overflow-hidden p-2 bg-blue-100 border border-black'>
                                         <Link target={"_blank"} rel="noreferrer" to={`https://explore.ipld.io/#/explore/${result.result.assetBlock.cid}`}>
                                             Explore Asset CID: {result.result.assetBlock.cid}
                                         </Link>   
@@ -85,7 +99,7 @@ const SPAuditDetails = () => {
                                 <div className='mt-4 mb-4'>
                                     {index === 0 ? 
                                        (
-                                        <div className='grid grid-cols-2 gap-3 gap-x-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2'>
+                                        <div className='grid grid-cols-1 gap-3 gap-x-8 xs:grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2'>
                                             {
                                                 result.result.asset.data.map((asset, index) => (
                                                     <SPAssetResultCard key={index} asset={asset}/>                                 
@@ -95,7 +109,7 @@ const SPAuditDetails = () => {
                                         )
                                     : 
                                     (
-                                        <div className='grid grid-cols-2 gap-3 gap-x-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2'>
+                                        <div className='grid grid-cols-1 gap-3 gap-x-8 xs:grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2'>
                                             {
                                                 result.result.asset.map((asset, index) => (
                                                     <SPAssetResultCard key={index} asset={asset}/>                                 

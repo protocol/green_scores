@@ -19,3 +19,6 @@ app.get("/assets", (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server listening on ${PORT}`);
 });
+
+// Exporting api
+module.exports = app;

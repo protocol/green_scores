@@ -8,8 +8,10 @@ import { Routes, Route } from "react-router-dom"
 
 // components
 import Navbar from './components/Navbar';
+import SPAuditOutput from "./components/SPAuditOutput";
 
 function App() {
+
   return (
     <>
     <div className="dark:bg-gray-900">
@@ -18,11 +20,9 @@ function App() {
           {/* Home */}
           <Route path="/" exact element={<Home/>}/>
 
-          {/* Findings Summary */}
-          <Route path="/findings" exact element={<FindingsSummary/>}/>
-
-          {/* Findings Summary */}
+          {/* Audit Outputs */}
           <Route path="/auditoutputs" exact element={<AuditOutputs/>}/>
+          <Route path="/auditoutputs/:name" exact element={<SPAuditOutput/>} />
       </Routes>
     </div>
     </>

@@ -1,8 +1,8 @@
 // Navigation data:
 export const navbarData = {
     title: "Filecoin Sustainability Audit",
-    detailed_findings_btn_txt: "Detailed Findings",
-    audit_overview_btn_txt: "Audit Overview",
+    audit_overview_btn_txt: "Audit Overviews",
+    home_btn_txt: "Home",
     learn_more_btn_txt: "Learn More",
 }
 

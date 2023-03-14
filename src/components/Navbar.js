@@ -69,12 +69,12 @@ const Navbar = () => {
                     <div className="hidden sm:flex flex flex-row space-x-4 items-center">
                         {/* Btn: Audit Overview */}
                         <button onClick={() => navigate("/")} className="flex p-2 font-semibold text-xs text-green-400 bg-black border-2 border-green-400 focus:outline-none focus:bg-white focus:text-black duration-150 justify-center items-center">
-                            {navbarData.audit_overview_btn_txt}
+                            {navbarData.home_btn_txt}
                         </button>
 
                         {/* Btn: Detailed Findings */}
-                        <button onClick={() => navigate("/findings")} className="flex p-2 font-semibold text-xs text-green-400 bg-black border-2 border-green-400 focus:outline-none focus:bg-white focus:text-black duration-150 justify-center items-center">
-                            {navbarData.detailed_findings_btn_txt}
+                        <button onClick={() => navigate("/auditoutputs")} className="flex p-2 font-semibold text-xs text-green-400 bg-black border-2 border-green-400 focus:outline-none focus:bg-white focus:text-black duration-150 justify-center items-center">
+                            {navbarData.audit_overview_btn_txt}
                         </button>
 
                         {/* Btn: Learn More */}
@@ -132,10 +132,10 @@ const Navbar = () => {
                 <div id="MobileNavigation" className={`${show ? 'block' : 'hidden'} sm:hidden mt-4 mx-auto`}>
                     <div className="flex flex-col gap-4 mt-10 w-80 mx-auto ">
                         <button onClick={() => navigate("/")} className="flex space-x-2 w-full h-10 font-semibold text-sm leading-3 text-white bg-black border border-white focus:outline-none focus:bg-green-500 hover:bg-green-500 duration-150 justify-center items-center">
-                            {navbarData.audit_overview_btn_txt}
+                            {navbarData.home_btn_txt}
                         </button>
-                        <button onClick={() => navigate("/findings")} className="flex space-x-2 w-full h-10 font-semibold text-sm leading-3 text-white bg-black border border-white focus:outline-none focus:bg-green-500 hover:bg-green-500 duration-150 justify-center items-center">
-                            {navbarData.detailed_findings_btn_txt}
+                        <button onClick={() => navigate("/auditoutputs")} className="flex space-x-2 w-full h-10 font-semibold text-sm leading-3 text-white bg-black border border-white focus:outline-none focus:bg-green-500 hover:bg-green-500 duration-150 justify-center items-center">
+                            {navbarData.audit_overview_btn_txt}
                         </button>
                         <button className="flex space-x-2 w-full h-10 font-semibold text-sm leading-3 text-white bg-black border border-white focus:outline-none focus:bg-green-500 hover:bg-green-500 duration-150 justify-center items-center">
                             <Link to="https://filecoin-green.gitbook.io/filecoin-green-documentation/readme-1/storage-providers-tiered-sustainability-claims">

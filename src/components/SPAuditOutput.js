@@ -4,6 +4,7 @@ import {useParams, useNavigate} from "react-router-dom";
 
 // components:
 import DcentOutputs from './DcentOutputs';
+import SPAuditDetails from './SPAuditDetails';
 
 
 const SPAuditOutput = () => {
@@ -14,21 +15,19 @@ const SPAuditOutput = () => {
     return (
         <>
         {name === "DCENT" ? 
-            <div className="">
+            <div>
                 <DcentOutputs/>
             </div> 
         : null }
         {name === "PiKNiK" ? 
-        <div className="h-screen dark:bg-gray-900">
-            <div className='text-center p-10'>
-                <h1 className='text-white'>Coming Soon!</h1>
+            <div>
+                <SPAuditDetails/>
             </div>
-        </div> 
         : null }
         {name === "SXX" ? 
             <div className="h-screen dark:bg-gray-900">
                 <div className='text-center p-10'>
-                    <h1 className='text-white'>Coming Soon!</h1>
+                    <h1 className='text-green-500'>Coming Soon!</h1>
                 </div>
             </div> 
         : null }

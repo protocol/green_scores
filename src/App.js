@@ -1,6 +1,5 @@
 // pages
 import Home from "./pages/Home"
-import FindingsSummary from './pages/FindingsSummary';
 import AuditOutputs from './pages/AuditOutputs';
 
 // router
@@ -11,6 +10,7 @@ import Navbar from './components/Navbar';
 import SPAuditOutput from "./components/SPAuditOutput";
 
 function App() {
+  
 
   return (
     <>

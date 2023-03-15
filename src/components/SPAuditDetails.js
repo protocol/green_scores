@@ -15,7 +15,7 @@ const SPAuditDetails = () => {
 
     useEffect(() => {
       
-        fetch("/assets")
+        fetch("https://sp-serverless-api.vercel.app/assets")
         .then((res) => res.json())
         .then((data) =>
         {

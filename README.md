@@ -6,7 +6,7 @@ This work is complementary to the [Reporting Portal](https://filecoin-green.gitb
 
 These Green Scores will likely be packaged as [Hypercerts](hypercerts.xyz), and may be tied to incentives for decarbonization such as a boost in reputation score, or other economic benefits.
 
-Live site: **[sp-audits.xyz](https://www.sp-audits.xyz/)**
+Live site: **[sgreenscores.xyz](https://www.greenscores.xyz/)**
 
 # Getting Started with Create React App
 

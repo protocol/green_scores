@@ -1,10 +1,10 @@
 // react
 import React from 'react'
-import {useParams, useNavigate} from "react-router-dom";
+import {useParams} from "react-router-dom";
 
 // components:
 import DcentOutputs from './DcentOutputs';
-import SPAuditDetails from './SPAuditDetails';
+import SPAuditDetails from './SPauditDetails';
 
 
 const SPAuditOutput = () => {

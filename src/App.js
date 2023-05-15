@@ -7,7 +7,7 @@ import { Routes, Route } from "react-router-dom"
 
 // components
 import Navbar from './components/Navbar';
-import SPAuditOutput from "./components/SPAuditOutput";
+import SPAuditOutput from "./components/SPauditOutput";
 
 function App() {
   
@@ -21,8 +21,8 @@ function App() {
           <Route path="/" exact element={<Home/>}/>
 
           {/* Audit Outputs */}
-          <Route path="/auditoutputs" exact element={<AuditOutputs/>}/>
-          <Route path="/auditoutputs/:name" exact element={<SPAuditOutput/>} />
+          <Route path="/Auditoutputs" exact element={<AuditOutputs/>}/>
+          <Route path="/Auditoutputs/:name" exact element={<SPAuditOutput/>} />
       </Routes>
     </div>
     </>

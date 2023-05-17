@@ -1,0 +1,21 @@
+{
+  "name": "index.js",
+  "version": "1.0.0",
+  "description": "Express.js backend for co2.storage",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.21"
+  },
+  "dependencies": {
+    "@co2-storage/js-api": "^1.1.38",
+    "env-cmd": "^10.1.0",
+    "express": "^4.18.2",
+    "fs": "^0.0.1-security"
+  },
+  "type": "module"
+}

@@ -1,35 +1,47 @@
 // react
 import React from 'react'
-import {useParams, useNavigate} from "react-router-dom";
+import {useParams} from "react-router-dom";
 
 // components:
-import DcentOutputs from './DcentOutputs';
 import SPAuditDetails from './SPAuditDetails';
 
 
 const SPAuditOutput = () => {
-    const { name } = useParams(); 
+    const { name, record_type } = useParams(); 
     
     console.log(name);  
 
     return (
         <>
-        {name === "DCENT" ? 
+        {name === "DCENT" ?
             <div>
-                <DcentOutputs/>
+                <SPAuditDetails storage_provider={name} record_type={record_type}/>
             </div> 
         : null }
         {name === "PiKNiK" ? 
             <div>
-                <SPAuditDetails/>
+                <SPAuditDetails storage_provider={name} record_type={record_type}/>
             </div>
         : null }
-        {name === "SXX" ? 
-            <div className="h-screen dark:bg-gray-900">
-                <div className='text-center p-10'>
-                    <h1 className='text-green-500'>Coming Soon!</h1>
-                </div>
-            </div> 
+        {name === "SXX Dongyue Temple Data Center" ? 
+            <div>
+                <SPAuditDetails storage_provider={name} record_type={record_type}/>
+            </div>
+        : null }
+        {name === "MongoStorage" ? 
+            <div>
+                <SPAuditDetails storage_provider={name} record_type={record_type}/>
+            </div>
+        : null }
+        {name === "PiKNiK_Switch" ? 
+            <div>
+                <SPAuditDetails storage_provider={name} record_type={record_type}/>
+            </div>
+        : null }
+        {name === "Holon" ? 
+            <div>
+                <SPAuditDetails storage_provider={name} record_type={record_type}/>
+            </div>
         : null }
         </>
     )

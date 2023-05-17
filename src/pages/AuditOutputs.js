@@ -6,7 +6,13 @@ import { Link } from "react-router-dom"
 import AuditOutputsCard from '../components/AuditOutputsCard';
 
 // data:
-import { dcentData, piknikData, sxxData} from '../utils/AuditOutputs';
+import { 
+    dcentData, 
+    piknikData, 
+    sxxData,
+    mongoData,
+    holonData,
+    piknikSwitchData} from '../utils/AuditOutputs';
 
 const AuditOutputs = () => {
 
@@ -23,17 +29,12 @@ const AuditOutputs = () => {
 
             {/* Audit outputs */}
             <div className='flex mt-10 gap-10 grid grid-flow-row sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3'>    
-                <Link to={`/auditoutputs/${dcentData.title}`}>
                     <AuditOutputsCard data={dcentData}/>
-                </Link>
-
-                <Link to={`/auditoutputs/${piknikData.title}`}>
                     <AuditOutputsCard data={piknikData}/>
-                </Link>
-
-                <Link to={`/auditoutputs/${sxxData.title}`}>
+                    <AuditOutputsCard data={piknikSwitchData}/>
                     <AuditOutputsCard data={sxxData}/>
-                </Link>
+                    <AuditOutputsCard data={mongoData}/>
+                    <AuditOutputsCard data={holonData}/>
             </div>
         </div>
     

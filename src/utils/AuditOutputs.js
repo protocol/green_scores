@@ -1,15 +1,14 @@
 // Tier data: 
 export const tierData = {
-    bronze: "🥉 Bronze Tier",
-    silver: "🥈 Silver Tier",
-    gold: "🥇 Gold Tier",
+    bronze: "2022 Sustainablity Tier: 🥉 Bronze",
+    silver: "2022 Sustainablity Tier: 🥈 Silver",
+    gold: "2022 Sustainablity Tier: 🥇 Gold",
 };
 
 // DCENT: 
 export const dcentData = {
     title: "DCENT",
     image: "https://miro.medium.com/max/1200/1*ha6lY_941aGefpqw-F1ZKQ.png",
-    text: "2022 Sustainablity Claim Tier",
     tier: tierData.gold,
 }; 
 
@@ -17,14 +16,33 @@ export const dcentData = {
 export const piknikData = {
     title: "PiKNiK",
     image: "https://images.squarespace-cdn.com/content/v1/60ca95d66cc4cb77e67635ef/1625094635670-1NU5TJSWAN01EHRHCOTH/White+Text+-+Transparent.png",
-    text: "2022 Sustainablity Claim Tier",
-    tier: tierData.bronze,
+    tier: tierData.gold,
+};
+
+// Piknik Switch: 
+export const piknikSwitchData = {
+    title: "PiKNiK_Switch",
+    image: "https://images.squarespace-cdn.com/content/v1/60ca95d66cc4cb77e67635ef/1625094635670-1NU5TJSWAN01EHRHCOTH/White+Text+-+Transparent.png",
+    tier: tierData.gold,
 };
 
 // SXX 
 export const sxxData = {
-    title: "SXX",
+    title: "SXX Dongyue Temple Data Center",
     image: "https://img.freepik.com/free-vector/neon-style-coming-soon-glowing-background-design_1017-25516.jpg",
-    text: "Coming Soon",
-    tier: "Coming Soon",
+    tier: tierData.silver,
+};
+
+// Mongo 
+export const mongoData = {
+    title: "MongoStorage",
+    image: "https://img.freepik.com/free-vector/neon-style-coming-soon-glowing-background-design_1017-25516.jpg",
+    tier: tierData.silver,
+};
+
+// Holon 
+export const holonData = {
+    title: "Holon",
+    image: "https://img.freepik.com/free-vector/neon-style-coming-soon-glowing-background-design_1017-25516.jpg",
+    tier: tierData.silver,
 };

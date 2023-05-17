@@ -22,7 +22,7 @@ function App() {
 
           {/* Audit Outputs */}
           <Route path="/auditoutputs" exact element={<AuditOutputs/>}/>
-          <Route path="/auditoutputs/:name" exact element={<SPAuditOutput/>} />
+          <Route path="/auditoutputs/:name/:record_type" exact element={<SPAuditOutput/>} />
       </Routes>
     </div>
     </>

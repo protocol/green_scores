@@ -42,15 +42,38 @@ const SPAuditDetails = ({storage_provider, record_type}) => {
                 <header className="App-header">
 
                     {/* Green Score: */}
-                    <div className="p-5 shadow-lg bg-gradient-to-r from-green-200 via-grey-100 to-blue-200 border border border-black">
+                    {storage_provider === "Anonymous" ? (
+                        <>
+                        {/* Sp Name */}
+                        <div className="p-5 shadow-lg bg-gradient-to-r from-green-200 via-grey-100 to-blue-200 border border border-black">
                             <div className="flex justify-center text-center grid-row-1">
                                 <h1 className="focus:outline-none md:w-90 font-bold md:text-xl text-lg text-black">
-                                    🔎 {storage_provider}'s {record_type} Findings 🔎
+                                    {storage_provider} Miner IDs - {record_type} Findings 🔎
                                 </h1>
                             </div>
-                    </div>
-                    {!data ? 
-                    (
+
+                            {/* Anonymous ID Alerts */}
+                            <div className="mt-4 p-2 ml-10 mr-10 shadow-lg bg-red-200 border border border-black">
+                                <div className="flex justify-center text-center grid-row-1">
+                                    <h1 className="text-xs text-black">
+                                        Anonymous Miner IDs energy validation process outputs will not include Storage Providers or locations associated with them.
+                                    </h1>
+                                </div>
+                            </div>
+                        </div>
+                        </>
+                    ) : (
+                        <div className="p-5 shadow-lg bg-gradient-to-r from-green-200 via-grey-100 to-blue-200 border border border-black">
+                            <div className="flex justify-center text-center grid-row-1">
+                                <h1 className="focus:outline-none md:w-90 font-bold md:text-xl text-lg text-black">
+                                    🔎 {storage_provider} - {record_type} Findings 🔎
+                                </h1>
+                            </div>
+                        </div>
+                    )}
+
+                    {/* Energy Validation Data */}
+                    {!data ? (
                         <div className='mt-60 text-center justify-center h-screen dark:bg-gray-900'>
                              <ScaleLoader
                                 color={color}
@@ -61,8 +84,7 @@ const SPAuditDetails = ({storage_provider, record_type}) => {
                             />
                         </div>
                     ) : (
-                        
-                       <div>
+                       <div className='h-screen dark:bg-gray-900'>
                             {data.length === 0 ? (
                                 <div className='mt-60 h-screen dark:bg-gray-900'> 
                                     <div className='flex items-center justify-center'> 
@@ -132,7 +154,6 @@ const SPAuditDetails = ({storage_provider, record_type}) => {
                                 )) 
                             )}
                         </div>
-                    // end of data exists
                     )}
                 </header>
             </div>

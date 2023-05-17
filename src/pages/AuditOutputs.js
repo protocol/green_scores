@@ -22,7 +22,7 @@ const AuditOutputs = () => {
             <div className="p-5 shadow-lg bg-gradient-to-r from-green-200 via-grey-100 to-blue-200 border border border-black">
                     <div className="flex justify-center text-center grid-row-1">
                         <h1 className="focus:outline-none md:w-90 font-bold md:text-xl text-lg text-black">
-                            Storage Provider Audit Outputs
+                            Storage Provider Energy Validation Outputs
                         </h1>
                     </div>
                 </div>

@@ -42,7 +42,7 @@ export const mongoData = {
 
 // Holon 
 export const holonData = {
-    title: "Holon - New Zealand Operations",
+    title: "Holon New Zealand Operations",
     image: "https://img.freepik.com/free-vector/neon-style-coming-soon-glowing-background-design_1017-25516.jpg",
     tier: tierData.gold,
 };

@@ -23,28 +23,28 @@ export const dataRequirements = {
     criteria: "Data Requirements",
     titles: ["Tier", "Location", "Water Use", "Energy Use", "Renewables", "Hardware", "On-site Renewable Energy"],
     bronze : [
-        "Approximate location is reported for auditing", 
-        "Water use is reported for auditing",
-        "Energy use is reported for auditing",
-        "Renewable energy purchases are reported for auditing",
+        "Approximate location is reported for EVP", 
+        "Water use is reported for EVP",
+        "Energy use is reported for EVP",
+        "Renewable energy purchases are reported for EVP",
         "Not Applicable",
         "Not Applicable"
     ],
     silver : [
-        "Approximate location is reported for auditing",
-        "Granular water use is reported from utility bills for auditing",
-        "Granular energy use is reported from utility bills for auditing",
-        "Granular renewable energy purchases are reported for auditing",
-        "Hardware setup (with pictures/videos) is provided for auditing",
+        "Approximate location is reported for EVP",
+        "Granular water use is reported from utility bills for EVP",
+        "Granular energy use is reported from utility bills for EVP",
+        "Granular renewable energy purchases are reported for EVP",
+        "Hardware setup (with pictures/videos) is provided for EVP",
         "Not Applicable"
     ],
     gold: [
-        "Approximate location is reported for auditing",
-        "Granular water use is reported from utility bills for auditing",
-        "Granular energy use is reported from utility bills for auditing",
-        "Granular renewable energy purchases are reported for auditing",
-        "Hardware setup (with pictures/videos) is provided for auditing",
-        "Renewable energy is generated on-site, and setup details or documentation of contract are provided for auditing"
+        "Approximate location is reported for EVP",
+        "Granular water use is reported from utility bills for EVP",
+        "Granular energy use is reported from utility bills for EVP",
+        "Granular renewable energy purchases are reported for EVP",
+        "Hardware setup (with pictures/videos) is provided for EVP",
+        "Renewable energy is generated on-site, and setup details or documentation of contract are provided for EVP"
     ],
     results : {
         findings: [
@@ -191,23 +191,23 @@ export const reportingMethods = {
 
 // Auditing Process:
 export const auditingProcess = {
-    criteria: "Auditing Process",
-    titles: ["Tier", "Audit Type", "Frequency","Results"],
+    criteria: "Energy Validation Process {EVP}",
+    titles: ["Tier", "Validation Type", "Frequency","Results"],
     bronze : [
         "Remote",
         "Yearly",
-        "Auditor confirms location, water usage, energy consumption data, and renewable energy purchases by cross referencing all available materials",
+        "Energy Validation confirms location, water usage, energy consumption data, and renewable energy purchases by cross referencing all available materials",
     ],
     silver : [
         "Remote",
         "Quarterly",
-        "Auditor confirms location, water usage, energy consumption data, and renewable energy purchases by cross referencing all available materials",
+        "Energy Validation confirms location, water usage, energy consumption data, and renewable energy purchases by cross referencing all available materials",
 
     ],
     gold: [
         "Remote & On-site",
         "Quarterly",
-        "Auditor confirms location, water usage, energy consumption data, and renewable energy purchases by cross referencing all available materials",
+        "Energy Validation confirms location, water usage, energy consumption data, and renewable energy purchases by cross referencing all available materials",
 
     ],
     results : {
@@ -248,11 +248,11 @@ export const audit_outputs = {
     findings_summary: [
         {
             title: "Data Requirements", 
-            description: "Service provider met all minimum data requirements for location, water use, energry use, renewables, hardware, and on-site renewable energy."
+            description: "Storage provider met all minimum data requirements for location, water use, energry use, renewables, hardware, and on-site renewable energy."
         },
         {
             title: "Emissions Profile",
-            description: "Carbon accounting and emissions profile exercises will start in 2023. Service provider purchases renewable energy from utility company."
+            description: "Carbon accounting and emissions profile exercises will start in 2023. Storage provider purchases renewable energy from utility company."
         },
         {
             title: "Embodied Emissions",
@@ -260,11 +260,11 @@ export const audit_outputs = {
         },
         {
             title: "Reporting Methods",
-            description: "Service provider submitted monthly utility bills plus metered solar power generation and storage energy use data through API/web interface. Service provider is working on meters to monitor sealing energy use."
+            description: "Storage provider submitted monthly utility bills plus metered solar power generation and storage energy use data through API/web interface. Storage provider is working on meters to monitor sealing energy use."
         },
         {
-            title: "Auditing Details",
-            description: "Service provider completed two quarterly remote audits, and provided login details to website to monitor solar power generation and storage energy use."
+            title: "Energy Validation Details",
+            description: "Storage provider completed two quarterly remote EVPs, and provided login details to website to monitor solar power generation and storage energy use."
         },
     ], 
     recommendations: [
@@ -285,7 +285,7 @@ export const audit_outputs = {
             description: "Complete meter installation and configuration to monitor sealing energy use."
         },
         {
-            title: "Auditing Details",
+            title: "Energy Validation Details",
             description: "Continue to provide utility bills on quarterly basis"
         },
     ]

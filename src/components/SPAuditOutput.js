@@ -43,6 +43,11 @@ const SPAuditOutput = () => {
                 <SPAuditDetails storage_provider={name} record_type={record_type}/>
             </div>
         : null }
+        {name === "Anonymous" ? 
+            <div>
+                <SPAuditDetails storage_provider={name} record_type={record_type}/>
+            </div>
+        : null }
         </>
     )
 }

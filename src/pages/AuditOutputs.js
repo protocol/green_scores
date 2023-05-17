@@ -12,6 +12,7 @@ import {
     sxxData,
     mongoData,
     holonData,
+    anonymousData,
     piknikSwitchData} from '../utils/AuditOutputs';
 
 const AuditOutputs = () => {
@@ -35,6 +36,7 @@ const AuditOutputs = () => {
                     <AuditOutputsCard data={sxxData}/>
                     <AuditOutputsCard data={mongoData}/>
                     <AuditOutputsCard data={holonData}/>
+                    <AuditOutputsCard data={anonymousData}/>
             </div>
         </div>
     

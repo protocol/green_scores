@@ -9,7 +9,7 @@ export const navbarData = {
 // Hero data:
 // Audit Hero Section:
 export const homeHeroData = {
-    title: ["2022", "Energy Validation Results"],
+    title: ["2022", " Energy Validation Results"],
     description: [
         "To generate the sustainibility claim tier, we survey Storage Providers by reviewing & validating their provided documents against our sustainability matrix.",
         "Learn About Green Scores"

@@ -18,7 +18,7 @@ const AuditOutputsCard = ({data}) => {
                 <div className="font-bold text-lg mb-2 dark:text-green-300">{data.title}</div> 
 
                 <div className='flex inline-block'>
-                  <span className="shadow-lg border-black border px-3 py-1 text-sm font-semibold text-green-600">{data.tier}</span>   
+                  <span className="shadow-lg border-black border px-3 py-1 text-sm font-semibold text-green-600 dark:border-green-800 dark:border">{data.tier}</span>   
                 </div>        
             </div>
             <p className="text-black ml-6 mb-4 font-bold text-sm dark:text-white">Explore Findings: </p>

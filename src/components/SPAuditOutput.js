@@ -38,7 +38,7 @@ const SPAuditOutput = () => {
                 <SPAuditDetails storage_provider={name} record_type={record_type}/>
             </div>
         : null }
-        {name === "Holon" ? 
+        {name === "Holon New Zealand Operations" ? 
             <div>
                 <SPAuditDetails storage_provider={name} record_type={record_type}/>
             </div>

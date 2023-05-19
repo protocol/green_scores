@@ -72,7 +72,12 @@ const Navbar = () => {
                             {navbarData.home_btn_txt}
                         </button>
 
-                        {/* Btn: Detailed Findings */}
+                        {/* Btn: Search */}
+                        <button onClick={() => navigate("/search")} className="flex p-2 font-semibold text-xs text-green-400 bg-black border border-green-400 focus:outline-none focus:bg-white focus:text-black duration-150 justify-center items-center">
+                            Search
+                        </button>
+
+                        {/* Btn: EVP Results */}
                         <button onClick={() => navigate("/auditoutputs")} className="flex p-2 font-semibold text-xs text-green-400 bg-black border border-green-400 focus:outline-none focus:bg-white focus:text-black duration-150 justify-center items-center">
                             {navbarData.audit_overview_btn_txt}
                         </button>

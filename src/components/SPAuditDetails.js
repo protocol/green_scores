@@ -1,5 +1,5 @@
 // react
-import React, {useState, useEffect, useRef, useCallback} from 'react'
+import React, {useState, useEffect, useRef} from 'react'
 import SPAssetResultCard from './SPAssetResultCard';
 import { Link } from 'react-router-dom';
 
@@ -84,9 +84,9 @@ const SPAuditDetails = ({storage_provider, record_type}) => {
                             />
                         </div>
                     ) : (
-                       <div className='h-screen dark:bg-gray-900'>
+                       <div className='h-full dark:bg-gray-900'>
                             {data.length === 0 ? (
-                                <div className='mt-60 h-screen dark:bg-gray-900'> 
+                                <div className='mt-60 h-full dark:bg-gray-900'> 
                                     <div className='flex items-center justify-center'> 
                                         <div className='w-1/2 p-10 text-center border border-red-500 bg-red-50 shadow-lg dark:bg-gray-700'>
                                             <p className='text-xl text-black font-semibold dark:text-red-600'>There are currently no {record_type} Findings for {storage_provider}.</p>

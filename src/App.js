@@ -9,6 +9,9 @@ import { Routes, Route } from "react-router-dom"
 import Navbar from './components/Navbar';
 import SPAuditOutput from "./components/SPAuditOutput";
 
+// pages
+import SearchOutputs from "./pages/SearchOutputs";
+
 function App() {
   
 
@@ -22,7 +25,10 @@ function App() {
 
           {/* Audit Outputs */}
           <Route path="/auditoutputs" exact element={<AuditOutputs/>}/>
-          <Route path="/auditoutputs/:name/:record_type" exact element={<SPAuditOutput/>} />
+          <Route path="/auditoutputs/:name/:record_type" exact element={<SPAuditOutput/>}/>
+
+          {/* Search */}
+          <Route path="/search" exact element={<SearchOutputs/>}/>
       </Routes>
     </div>
     </>

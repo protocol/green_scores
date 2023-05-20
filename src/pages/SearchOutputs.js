@@ -2,6 +2,7 @@
 import React, {useState, useEffect, useRef} from 'react'
 import SPAssetResultCard from '../components/SPAssetResultCard';
 import { Link } from 'react-router-dom';
+import green_energy_img from '../assets/3d_green_electricity.webp'
 
 // dates
 import DatePicker from "react-multi-date-picker"
@@ -32,16 +33,10 @@ const SearchOutputs = () => {
     // Handle Search:
     const handleSearch = (event) => {
 
-        // test calls:
-        console.log("SEARCH BUTTON CLICKED!");
-        console.log("NAME: ", selectedName)
-        console.log("START DATE:", selectedStartDate.toString().replace(/\//g,'-'))
-        console.log("END DATE:",  selectedEndDate.toString().replace(/\//g,'-'))
-        console.log("WATER:", selectedWater)
-        console.log("Electricity:", selectedElectricity)
+        let startDateFormatted = selectedStartDate.toString().replace(/\//g,'-');
+        let endDateFormatted = selectedEndDate.toString().replace(/\//g,'-');
 
-        // call load data:
-        loadStorageProviderOutputs(selectedName, selectedWater);
+        loadStorageProviderOutputs(selectedName, startDateFormatted, endDateFormatted, selectedWater, selectedElectricity);
 
         if (!dataLoaded.current) {
             dataLoaded.current = true;
@@ -49,19 +44,14 @@ const SearchOutputs = () => {
         event.preventDefault();
     };
 
-    const loadStorageProviderOutputs = (spName, spWaterRecord) => {
-
-        // let electricityRecord = null;
-        let water = null;
+    // Load storage provider data:
+    const loadStorageProviderOutputs = (spName, spStartDate, spEndDate, spWaterRecord, spElectricityRecord) => {
         
-        if(spWaterRecord){
-            water = "Water Audit Data";
-        } 
+        let searchURL = getURL(spName, spStartDate, spEndDate, spWaterRecord, spElectricityRecord);
 
-        let url = `https://sp-outputs-api.vercel.app/api/storage-provider/?sp_name=${spName}&record_type=${water}`;
-        console.log(url);
+        console.log(searchURL);
        
-        fetch(url)
+        fetch(searchURL)
             .then((res) => res.json())
             .then((data) =>
             {
@@ -70,6 +60,29 @@ const SearchOutputs = () => {
                 setLoading(!loading);
             });
     };
+
+    // Creates URL search endpoint:
+    const getURL = (spName, spStartDate, spEndDate, spWaterRecord, spElectricityRecord) => {
+
+        let water, electricity, allSelection, url = null;
+        
+        if(spWaterRecord && !spElectricityRecord){
+            water = "Water Audit Data";
+            url = `https://sp-outputs-api.vercel.app/api/search/?sp_name=${spName}&record_type=${water}&start_date=${spStartDate}&end_date=${spEndDate}`;
+        } 
+        
+        if(spElectricityRecord && !spWaterRecord){
+            electricity = "Electricity Audit Data";
+            url = `https://sp-outputs-api.vercel.app/api/search/?sp_name=${spName}&record_type=${electricity}&start_date=${spStartDate}&end_date=${spEndDate}`;
+        } 
+
+        if(spElectricityRecord && spWaterRecord){
+            allSelection = "All";
+            url = `https://sp-outputs-api.vercel.app/api/search/?sp_name=${spName}&record_type=${allSelection}&start_date=${spStartDate}&end_date=${spEndDate}`;
+        } 
+
+        return url;
+    }
 
     return (
         <div className='h-full dark:bg-gray-900'>
@@ -198,21 +211,22 @@ const SearchOutputs = () => {
                             /> */}
 
                             <div className='bg-gray-50 border border-black w-full p-10 space-y-10 dark:border dark:border-green-300 dark:bg-black'>
+                                {/* <img className="w-40 h-40" src={green_energy_img} alt="spimage"></img> */}
                                 <h1 className='text-xl font-semibold dark:text-green-400'>
                                     Welcome
                                 </h1>
                                 <p className='text-xl dark:text-green-400'>
-                                    Explore All Of The Energy Validation Assets on the Site.
+                                    Explore All Of The Energy Validation Assets on the Site. As an example, try searching for PiKNiK, or DCENT.
                                 </p>
-                                <p className='text-xl dark:text-green-400'>
+                                {/* <p className='text-xl dark:text-green-400'>
                                     As an example, try searching for PiKNiK, or DCENT.
-                                </p>
+                                </p> */}
                             </div>
                         </div>
                     ) : (
                        <div className='h-full dark:bg-gray-900'>
                             {filteredData.length === 0 ? (
-                                <div className='mt-60 h-screen dark:bg-gray-900'> 
+                                <div className='mt-60 h-full dark:bg-gray-900'> 
                                     <div className='flex items-center justify-center'> 
                                         <div className='w-1/2 p-10 text-center border border-red-500 bg-red-50 shadow-lg dark:bg-gray-700'>
                                             <p className='text-xl text-black font-semibold dark:text-red-600'>There are currently no Energy Validation Findings for {selectedName}.</p>

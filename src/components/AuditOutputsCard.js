@@ -13,7 +13,7 @@ const AuditOutputsCard = ({data}) => {
     <>
     <div>
       <div className="border border-black bg-gray-50 shadow-xl dark:border-green-400 dark:border dark:bg-black">
-            {/* <img className="w-full h-40 bg-black" src={data.image} alt="spimage"></img> */}
+            <img className="w-full h-40 bg-black" src={data.image} alt="spimage"></img>
             <div className="px-6 py-4">
                 <div className="font-bold text-lg mb-2 dark:text-green-300">{data.title}</div> 
 

@@ -29,27 +29,27 @@ export const piknikSwitchData = {
 // SXX 
 export const sxxData = {
     title: "SXX Dongyue Temple Data Center",
-    image: "https://img.freepik.com/free-vector/neon-style-coming-soon-glowing-background-design_1017-25516.jpg",
+    image: "/SXX_logo.png",
     tier: tierData.bronze,
 };
 
 // Mongo 
 export const mongoData = {
     title: "MongoStorage",
-    image: "https://img.freepik.com/free-vector/neon-style-coming-soon-glowing-background-design_1017-25516.jpg",
+    image: "/anonymous.png",
     tier: tierData.gold,
 };
 
 // Holon 
 export const holonData = {
     title: "Holon New Zealand Operations",
-    image: "https://img.freepik.com/free-vector/neon-style-coming-soon-glowing-background-design_1017-25516.jpg",
+    image: "/holon_logo.png",
     tier: tierData.gold,
 };
 
 // Anonymoud 
 export const anonymousData = {
-    title: "Anonymous",
-    image: "https://img.freepik.com/free-vector/neon-style-coming-soon-glowing-background-design_1017-25516.jpg",
+    title: "Anonymous Miners",
+    image: "/anonymous.jpg",
     tier: tierData.silver,
 };

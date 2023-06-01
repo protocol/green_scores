@@ -201,7 +201,7 @@ const SearchOutputs = () => {
                 <div className="w-3/4">
                     {/* Energy Validation Data */}
                     {!filteredData ? (
-                        <div className='text-center justify-center h-full dark:bg-gray-900'>
+                        <div className='text-center justify-center h-screen dark:bg-gray-900'>
                              {/* <ScaleLoader
                                 color={color}
                                 loading={loading}

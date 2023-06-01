@@ -12,8 +12,16 @@ const ValidatorsView = () => {
     text_auditor: "Auditor:",
     text_wallet_address: "Wallet Address:",
     auditor: "Anthesis",
-    address_1: "0xf552699fa32ed3ed3b162815e8db99b8e20c9fcc",
-    address_2: "0x5a3ab4ac1e84723b759b93f34b7fbf91256f68b5",
+    address_1: "0x5a3AB4ac1e84723B759B93F34b7FBf91256F68b5",
+    address_2: "0xeaa16f97efb4717442aaadc6efe959e461b9d2e8",
+    address_3: "0x582b4cCDB331c075121eD825dcD572E5480360FF",
+    address_4: "0xf552699Fa32ed3eD3b162815e8DB99B8e20C9fcC",
+    addresses : [
+      "0x5a3AB4ac1e84723B759B93F34b7FBf91256F68b5",
+      "0xeaa16f97efb4717442aaadc6efe959e461b9d2e8",
+      "0x582b4cCDB331c075121eD825dcD572E5480360FF",
+      "0xf552699Fa32ed3eD3b162815e8DB99B8e20C9fcC",
+    ]
   };
 
   return (
@@ -61,44 +69,30 @@ const ValidatorsView = () => {
 
             {/* Table Body */}
             <tbody className="w-full">
-
-              {/* Wallet 01 */}
-              <tr className="h-38 text-sm leading-none text-gray-800 border-b border-t bg-white hover:bg-gray-100 border-gray-50 dark:bg-black">
-                <td className="p-5 text-center">
-                    <p className="font-medium leading-none text-gray-800 dark:text-gray-400">{validatorData.auditor}</p>
-                </td>
-                <td className="p-5 text-center">
-                    <p className="font-medium leading-none text-gray-800 dark:text-gray-400">{validatorData.address_1}</p>
-                </td>
-                <td className="p-5 text-center">
-                  <button className="inline-flex items-start justify-start px-6 py-3 bg-black shadow-lg dark:bg-green-500">
-                    <Link to={`https://etherscan.io/address/${validatorData.address_1}`}>
-                        <p className="text-sm font-medium leading-none text-white dark:text-black">
-                          {validatorData.text_desc_4}
-                        </p>
-                    </Link>
-                    </button>
-                </td>
-              </tr>
-
-              {/* Wallet 02 */}
-              <tr className="h-38 text-sm leading-none text-gray-800 border-b border-t bg-white hover:bg-gray-100 border-gray-50 dark:bg-black">
-                <td className="p-5 text-center">
-                  <p className="font-medium leading-none text-gray-800 dark:text-gray-400">{validatorData.auditor}</p>
-                </td>
-                <td className="p-5 text-center">
-                    <p className="font-medium leading-none text-gray-800 dark:text-gray-400">{validatorData.address_2}</p>
-                </td>
-                <td className="p-5 text-center">
-                  <button className="inline-flex items-start justify-start px-6 py-3 bg-black shadow-lg dark:bg-green-500">
-                    <Link to={`https://etherscan.io/address/${validatorData.address_2}`}>
-                      <p className="text-sm font-medium leading-none text-white dark:text-black">
-                        {validatorData.text_desc_4}
+              {/* Address Mapping */}
+              {validatorData.addresses.map((address, index) => (
+                <tr key={index} className="h-38 text-md leading-none text-gray-800 border-b border-t bg-white hover:bg-gray-100 border-gray-50 dark:bg-black">
+                  <td key={index} className="p-4 text-center">
+                    <Link to={`https://www.anthesisgroup.com/`}>
+                      <p className="leading-none text-black dark:text-gray-300 hover:text-green-500">
+                        {validatorData.auditor}
                       </p>
                     </Link>
-                  </button>
-                </td>
-              </tr>
+                  </td>
+                  <td key={index} className="p-4 text-center">
+                      <p className="leading-none text-black dark:text-gray-300">{address}</p>
+                  </td>
+                  <td key={index} className="p-4 text-center">
+                    <button className="inline-flex items-start justify-start px-6 py-3 bg-black shadow-lg dark:bg-green-500 hover:bg-green-500">
+                      <Link to={`https://etherscan.io/address/${address}`}>
+                          <p className="text-sm font-semibold leading-none text-white dark:text-black">
+                            {validatorData.text_desc_4}
+                          </p>
+                      </Link>
+                      </button>
+                  </td>
+                </tr>
+            ))}
             </tbody>
           </table>
         </div>

@@ -82,6 +82,11 @@ const Navbar = () => {
                             {navbarData.audit_overview_btn_txt}
                         </button>
 
+                        {/* Btn: Validators */}
+                        <button onClick={() => navigate("/validators")} className="flex p-2 font-semibold text-xs text-green-400 bg-black border border-green-400 focus:outline-none focus:bg-white focus:text-black duration-150 justify-center items-center">
+                            Validators
+                        </button>
+
                         {/* Btn: Learn More */}
                         <button className="flex p-2 font-semibold text-xs text-black bg-green-500 border border-green-500 focus:outline-none focus:bg-white focus:text-black duration-150 justify-center items-center">
                             <Link to="https://filecoin-green.gitbook.io/filecoin-green-documentation/readme-1/storage-providers-tiered-sustainability-claims">
@@ -142,6 +147,11 @@ const Navbar = () => {
                         <button onClick={() => navigate("/auditoutputs")} className="flex space-x-2 w-full h-10 font-semibold text-sm leading-3 text-white bg-black border border-white focus:outline-none focus:bg-green-500 hover:bg-green-500 duration-150 justify-center items-center">
                             {navbarData.audit_overview_btn_txt}
                         </button>
+
+                        <button onClick={() => navigate("/validators")} className="flex space-x-2 w-full h-10 font-semibold text-sm leading-3 text-white bg-black border border-white focus:outline-none focus:bg-green-500 hover:bg-green-500 duration-150 justify-center items-center">
+                            Validators
+                        </button>
+
                         <button className="flex space-x-2 w-full h-10 font-semibold text-sm leading-3 text-white bg-black border border-white focus:outline-none focus:bg-green-500 hover:bg-green-500 duration-150 justify-center items-center">
                             <Link to="https://filecoin-green.gitbook.io/filecoin-green-documentation/readme-1/storage-providers-tiered-sustainability-claims">
                                 {navbarData.learn_more_btn_txt}

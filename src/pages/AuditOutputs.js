@@ -18,7 +18,7 @@ import {
 const AuditOutputs = () => {
 
     return (
-    <div className='h-screen dark:bg-gray-900'>
+    <div className='h-full dark:bg-gray-900'>
         <div className='p-10 justify-center'>
             <div className="p-5 shadow-lg bg-gradient-to-r from-green-200 via-grey-100 to-blue-200 border border border-black">
                     <div className="flex justify-center text-center grid-row-1">

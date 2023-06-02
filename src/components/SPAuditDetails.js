@@ -127,13 +127,13 @@ const SPAuditDetails = ({storage_provider, record_type}) => {
                                         {/* Block CID */}
                                         <div className='mt-4 text-xs font-semibold text-black dark:text-black flex grid lg:grid-cols-2 lg:gap-6 md:grid-cols-2 md:gap-6 sm:grid-cols-1 sm:gap-5 xs:grid-cols-1 xs:gap-4'>
                                             <div className='break-all overflow-hidden p-2 mb-2 bg-green-100 border border-black'>
-                                                <Link target={"_blank"} rel="noreferrer" to={`https://explore.ipld.io/#/explore/${result["block_cid"]}`}>
+                                                <Link target={"_blank"} rel="noreferrer" to={`https://form.co2.storage/asset/${result["block_cid"]}`}>
                                                     Explore Block CID: {result["block_cid"]}
                                                 </Link>
                                             </div>
 
                                             <div className='break-all overflow-hidden p-2 bg-blue-100 border border-black'>
-                                                <Link target={"_blank"} rel="noreferrer" to={`https://explore.ipld.io/#/explore/${result["asset_block_cid"]}`}>
+                                                <Link target={"_blank"} rel="noreferrer" to={`https://ipfs.io/api/v0/dag/get?arg=${result["asset_block_cid"]}`}>
                                                     Explore Asset CID: {result["asset_block_cid"]}
                                                 </Link>   
                                             </div>

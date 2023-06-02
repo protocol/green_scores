@@ -48,7 +48,7 @@ const SPAuditDetails = ({storage_provider, record_type}) => {
 
     return (
         <div>
-            <div className="p-10 dark:bg-gray-900">
+            <div className="h-screen p-10 dark:bg-gray-900">
                 <header className="App-header">
 
                     {/* Green Score: */}

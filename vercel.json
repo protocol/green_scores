@@ -2,6 +2,5 @@
     "github": {
       "enabled": false,
       "silent": true
-    },
-    "rewrites": [{ "source": "/api/(.*)", "destination": "/api" }]
+    }
   }

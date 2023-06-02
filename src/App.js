@@ -14,7 +14,6 @@ import SearchOutputs from "./pages/SearchOutputs";
 import ValidatorsView from "./pages/ValidatorsView";
 
 function App() {
-  
 
   return (
     <>

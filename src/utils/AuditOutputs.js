@@ -49,7 +49,7 @@ export const holonData = {
 
 // Anonymoud 
 export const anonymousData = {
-    title: "Anonymous Miners",
+    title: "Anonymous",
     image: "/anonymous.jpg",
     tier: tierData.silver,
 };

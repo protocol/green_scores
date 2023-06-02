@@ -141,27 +141,21 @@ const SPAuditDetails = ({storage_provider, record_type}) => {
                                     
                                         {/* Mapping Asset Data */}
                                         <div className='mt-4 mb-4'>
-                                            {result.data_asset_block_cid.data ? 
-                                                (
+                                            {result.data_asset_block_cid.data ? (
                                                 <div className='grid grid-cols-1 gap-3 gap-x-8 xs:grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2'>
-                                                    {
-                                                        result.asset.data.map((result, index) => (
-                                                            <div>
-                                                                <SPAssetResultCard key={index} asset={result}/>                                 
-                                                            </div>
-                                                        ))
-                                                    }
+                                                    {result.asset.data.map((result, index) => (
+                                                        <div>
+                                                            <SPAssetResultCard key={index} asset={result}/>                                 
+                                                        </div>
+                                                    ))}
                                                 </div>
-                                                ) : 
-                                                (
-                                                    <div className='grid grid-cols-1 gap-3 gap-x-8 xs:grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2'>
-                                                    {
-                                                        result.data_asset_block_cid.map((result, index) => (
-                                                            <div>
-                                                                <SPAssetResultCard key={index} asset={result}/>                                 
-                                                            </div>
-                                                        ))
-                                                    }
+                                                ) : (
+                                                <div className='grid grid-cols-1 gap-3 gap-x-8 xs:grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2'>
+                                                {result.data_asset_block_cid.map((result, index) => (
+                                                    <div>
+                                                        <SPAssetResultCard key={index} asset={result}/>                                 
+                                                    </div>
+                                                ))}
                                                 </div>
                                                 )
                                             }

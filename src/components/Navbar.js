@@ -68,31 +68,31 @@ const Navbar = () => {
                     </div>
                     <div className="hidden sm:flex flex flex-row space-x-4 items-center">
                         {/* Btn: Audit Overview */}
-                        <button onClick={() => navigate("/")} className="text-center break-normal flex px-3 py-2 font-semibold text-xs text-green-400 bg-black border border-green-400 focus:outline-none focus:bg-white focus:text-black justify-center items-center">
+                        <button onClick={() => navigate("/")} className="text-center break-normal flex px-2 py-2 font-semibold text-xs text-white bg-black border border-white focus:outline-none focus:bg-green-500 hover:bg-green-500 duration-150 justify-center items-center">
                             {navbarData.home_btn_txt}
                         </button>
 
                         {/* Btn: Search */}
-                        <button onClick={() => navigate("/search")} className="text-center break-normal flex px-3 py-2 font-semibold text-xs text-green-400 bg-black border border-green-400 focus:outline-none focus:bg-white focus:text-black justify-center items-center">
+                        <button onClick={() => navigate("/search")} className="text-center break-normal flex px-2 py-2 font-semibold text-xs text-white bg-black border border-white focus:outline-none focus:bg-green-500 hover:bg-green-500 duration-150 justify-center items-center">
                             Search
                         </button>
 
                         {/* Btn: EVP Results */}
-                        <button onClick={() => navigate("/auditoutputs")} className="text-center break-normal flex px-3 py-2 font-semibold text-xs text-green-400 bg-black border border-green-400 focus:outline-none focus:bg-white focus:text-black justify-center items-center">
+                        <button onClick={() => navigate("/auditoutputs")} className="text-center break-normal flex px-2 py-2 font-semibold text-xs text-white bg-black border border-white focus:outline-none focus:bg-green-500 hover:bg-green-500 duration-150 justify-center items-center">
                             {navbarData.audit_overview_btn_txt}
                         </button>
 
                         {/* Btn: Validators */}
-                        <button onClick={() => navigate("/validators")} className="text-center break-normal flex px-3 py-2 font-semibold text-xs text-green-400 bg-black border border-green-400 focus:outline-none focus:bg-white focus:text-black justify-center items-center">
+                        <button onClick={() => navigate("/validators")} className="text-center break-normal flex px-2 py-2 font-semibold text-xs text-white bg-black border border-white focus:outline-none focus:bg-green-500 hover:bg-green-500 duration-150 justify-center items-center">
                             Validators
                         </button>
 
                         {/* Btn: Learn More */}
-                        <button className="flex p-2 font-semibold text-xs text-black bg-green-500 border border-green-500 focus:outline-none focus:bg-white focus:text-black justify-center items-center">
+                        {/* <button className="flex p-2 font-semibold break-normal text-xs text-black bg-green-500 border border-green-500 focus:outline-none focus:bg-white focus:text-black justify-center items-center">
                             <Link to="https://filecoin-green.gitbook.io/filecoin-green-documentation/readme-1/storage-providers-tiered-sustainability-claims">
                                 {navbarData.learn_more_btn_txt}
                             </Link>
-                        </button>
+                        </button> */}
 
                         {/* Theme switch */}
                         <div onClick={toggleTheme} className={`flex h-[30px] w-[60px] rounded-[50px] bg-zinc-100 p-[2.5px] shadow-inner hover:cursor-pointer dark:bg-zinc-700 ${ isOn && 'place-content-end'}`}>
@@ -154,11 +154,11 @@ const Navbar = () => {
                             Validators
                         </button>
 
-                        <button className="flex space-x-2 w-full h-10 font-semibold text-sm leading-3 text-white bg-black border border-white focus:outline-none focus:bg-green-500 hover:bg-green-500 duration-150 justify-center items-center">
+                        {/* <button className="flex space-x-2 w-full h-10 font-semibold text-sm leading-3 text-white bg-black border border-white focus:outline-none focus:bg-green-500 hover:bg-green-500 duration-150 justify-center items-center">
                             <Link to="https://filecoin-green.gitbook.io/filecoin-green-documentation/readme-1/storage-providers-tiered-sustainability-claims">
                                 {navbarData.learn_more_btn_txt}
                             </Link>
-                        </button>
+                        </button> */}
                     </div>
                 </div>
             </nav>

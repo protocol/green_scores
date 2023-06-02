@@ -106,7 +106,7 @@ const SearchOutputs = () => {
             <div className="p-10 flex flex-col md:flex-row lg:flex-row xl:flex-row w-full gap-x-10">
                 
                 {/* left side */}
-                <div className="p-10 w-full md:w-1/4 lg:w-1/4 xl:w-1/4 h-full bg-gray-50 border-black border dark:bg-black dark:border dark:border-green-400">
+                <div className="p-10 w-full md:w-1/4 lg:w-1/4 xl:w-1/4 2xl:w-1/4 h-full bg-gray-50 border-black border dark:bg-black dark:border dark:border-green-400">
                     <form className='flex' onSubmit={handleSearch}>
                         <div className='flex flex-col justify-center'>
                             <p className='text-md font-semibold dark:text-green-400'>
@@ -204,7 +204,7 @@ const SearchOutputs = () => {
                 </div>
 
                 {/* right sight */}
-                <div className="w-full mt-5 md:w-3/4 lg:w-3/4 xl:w-3/4">
+                <div className="w-full mt-5 md:mt-0 lg:mt-0 xl:mt-0 2xl:mt-0 md:w-3/4 lg:w-3/4 xl:w-3/4 2xl:w-3/4 ">
                     {/* Energy Validation Data */}
                     {!filteredData ? (
                         <div className='text-center justify-center h-screen dark:bg-gray-900'>

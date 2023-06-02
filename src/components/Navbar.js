@@ -59,30 +59,40 @@ const Navbar = () => {
   
     return (
         <div className="bg-black shadow-xl w-full sticky top-0 z-50 dark:border-green-500 dark:border-b">
-            <nav className="2xl:container 2xl:mx-auto sm:py-6 sm:px-7 py-5 px-4 border-b border-black">
+            <nav className="ml-4 mr-4 py-4 px-4 border-b border-black">
                 {/* For large and Medium-sized Screens */}
                 <div className="flex justify-between">
                     <div className=" flex space-x-3 items-center">
                         <img onClick={() => navigate("/")} src={logo} className="h-12 mr-3 sm:h-12 border-green-500 border-2 shadow-lg hover:cursor-pointer" alt="Filecoin Green Logo"></img>
-                        <h1 className=" font-bold xl:text-2xl lg:text-xl md:text-md sm:text-sm leading-6 text-white">{navbarData.title}</h1>
+                        <h1 className="line-clamp-1 font-bold xl:text-xl lg:text-lg md:text-md sm:text-sm leading-6 text-white">{navbarData.title}</h1>
                     </div>
                     <div className="hidden sm:flex flex flex-row space-x-4 items-center">
                         {/* Btn: Audit Overview */}
-                        <button onClick={() => navigate("/")} className="flex p-2 font-semibold text-xs text-green-400 bg-black border-2 border-green-400 focus:outline-none focus:bg-white focus:text-black duration-150 justify-center items-center">
+                        <button onClick={() => navigate("/")} className="text-center break-normal flex px-2 py-2 font-semibold text-xs text-white bg-black border border-white focus:outline-none focus:bg-green-500 hover:bg-green-500 duration-150 justify-center items-center">
+                            {navbarData.home_btn_txt}
+                        </button>
+
+                        {/* Btn: Search */}
+                        <button onClick={() => navigate("/search")} className="text-center break-normal flex px-2 py-2 font-semibold text-xs text-white bg-black border border-white focus:outline-none focus:bg-green-500 hover:bg-green-500 duration-150 justify-center items-center">
+                            Search
+                        </button>
+
+                        {/* Btn: EVP Results */}
+                        <button onClick={() => navigate("/auditoutputs")} className="text-center break-normal flex px-2 py-2 font-semibold text-xs text-white bg-black border border-white focus:outline-none focus:bg-green-500 hover:bg-green-500 duration-150 justify-center items-center">
                             {navbarData.audit_overview_btn_txt}
                         </button>
 
-                        {/* Btn: Detailed Findings */}
-                        <button onClick={() => navigate("/findings")} className="flex p-2 font-semibold text-xs text-green-400 bg-black border-2 border-green-400 focus:outline-none focus:bg-white focus:text-black duration-150 justify-center items-center">
-                            {navbarData.detailed_findings_btn_txt}
+                        {/* Btn: Validators */}
+                        <button onClick={() => navigate("/validators")} className="text-center break-normal flex px-2 py-2 font-semibold text-xs text-white bg-black border border-white focus:outline-none focus:bg-green-500 hover:bg-green-500 duration-150 justify-center items-center">
+                            Validators
                         </button>
 
                         {/* Btn: Learn More */}
-                        <button className="flex p-2 font-semibold text-xs text-black bg-green-500 border border-green-500 focus:outline-none focus:bg-white focus:text-black duration-150 justify-center items-center">
+                        {/* <button className="flex p-2 font-semibold break-normal text-xs text-black bg-green-500 border border-green-500 focus:outline-none focus:bg-white focus:text-black justify-center items-center">
                             <Link to="https://filecoin-green.gitbook.io/filecoin-green-documentation/readme-1/storage-providers-tiered-sustainability-claims">
                                 {navbarData.learn_more_btn_txt}
                             </Link>
-                        </button>
+                        </button> */}
 
                         {/* Theme switch */}
                         <div onClick={toggleTheme} className={`flex h-[30px] w-[60px] rounded-[50px] bg-zinc-100 p-[2.5px] shadow-inner hover:cursor-pointer dark:bg-zinc-700 ${ isOn && 'place-content-end'}`}>
@@ -129,19 +139,26 @@ const Navbar = () => {
                     </div>
                 </div>
                 {/* Mobile and small-screen devices (toggle Menu) */}
-                <div id="MobileNavigation" className={`${show ? 'block' : 'hidden'} sm:hidden mt-4 mx-auto`}>
+                <div id="MobileNavigation" className={`${show ? 'block' : 'hidden'} sm:hidden md:hidden mt-4 mx-auto`}>
                     <div className="flex flex-col gap-4 mt-10 w-80 mx-auto ">
                         <button onClick={() => navigate("/")} className="flex space-x-2 w-full h-10 font-semibold text-sm leading-3 text-white bg-black border border-white focus:outline-none focus:bg-green-500 hover:bg-green-500 duration-150 justify-center items-center">
+                            {navbarData.home_btn_txt}
+                        </button>
+                        <button onClick={() => navigate("/auditoutputs")} className="flex space-x-2 w-full h-10 font-semibold text-sm leading-3 text-white bg-black border border-white focus:outline-none focus:bg-green-500 hover:bg-green-500 duration-150 justify-center items-center">
                             {navbarData.audit_overview_btn_txt}
                         </button>
-                        <button onClick={() => navigate("/findings")} className="flex space-x-2 w-full h-10 font-semibold text-sm leading-3 text-white bg-black border border-white focus:outline-none focus:bg-green-500 hover:bg-green-500 duration-150 justify-center items-center">
-                            {navbarData.detailed_findings_btn_txt}
+                        <button onClick={() => navigate("/search")} className="flex space-x-2 w-full h-10 font-semibold text-sm leading-3 text-white bg-black border border-white focus:outline-none focus:bg-green-500 hover:bg-green-500 duration-150 justify-center items-center">
+                            Search
                         </button>
-                        <button className="flex space-x-2 w-full h-10 font-semibold text-sm leading-3 text-white bg-black border border-white focus:outline-none focus:bg-green-500 hover:bg-green-500 duration-150 justify-center items-center">
+                        <button onClick={() => navigate("/validators")} className="flex space-x-2 w-full h-10 font-semibold text-sm leading-3 text-white bg-black border border-white focus:outline-none focus:bg-green-500 hover:bg-green-500 duration-150 justify-center items-center">
+                            Validators
+                        </button>
+
+                        {/* <button className="flex space-x-2 w-full h-10 font-semibold text-sm leading-3 text-white bg-black border border-white focus:outline-none focus:bg-green-500 hover:bg-green-500 duration-150 justify-center items-center">
                             <Link to="https://filecoin-green.gitbook.io/filecoin-green-documentation/readme-1/storage-providers-tiered-sustainability-claims">
                                 {navbarData.learn_more_btn_txt}
                             </Link>
-                        </button>
+                        </button> */}
                     </div>
                 </div>
             </nav>

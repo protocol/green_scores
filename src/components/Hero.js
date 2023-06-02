@@ -21,16 +21,16 @@ const Hero = () => {
     return (
         <>
         {/* Hero Section */}
-        <div className="2xl:container 2xl:mx-auto 2xl:mt-0 lg:py-16 lg:px-20 lg:mt-0 md:py-12 md:px-6 sm:mt-0 py-9 px-4">
+        <div className="p-10">
 
             {/* Summary: */}
-            <div className="py-20 2xl:px-0 lg:px-12 px-4 2xl:mx-auto 2xl:container bg-gray-50 border border-black shadow-lg dark:bg-black dark:border-green-400">
+            <div className="2xl:px-0 lg:px-12 px-4 2xl:mx-auto 2xl:container bg-gray-50 border border-black shadow-lg dark:bg-black dark:border-green-400">
                 <div className="md:flex items-center text-left p-16 justify-between w-full bg-gray-50 dark:bg-black">
                     <div className="xl:w-1/3 md:w-1/2 w-full mb-10">
-                        <h1 className="focus:outline-none md:w-60 font-bold md:text-6xl text-4xl leading-tight text-gray-800 dark:text-green-500">
+                        <h1 className="focus:outline-none md:w-60 font-bold md:text-5xl text-3xl leading-tight text-gray-800 dark:text-green-500">
                             {homeHeroData.title[0]}<span className="font-normal italic inline">{homeHeroData.title[1]}</span>
                         </h1>
-                        <p role="contentinfo" className="focus:outline-none text-base leading-6 mt-8 text-gray-600 2xl:pr-24 xl:pr-0 pr-12 dark:text-gray-50">
+                        <p className="focus:outline-none text-base leading-6 mt-8 text-gray-600 2xl:pr-24 xl:pr-0 pr-12 dark:text-gray-50">
                             {homeHeroData.description[0]}
                         </p>
                         <div className="mt-10">
@@ -42,8 +42,8 @@ const Hero = () => {
                                 </button>
                             </Link>
                         </div>
-                        <a href={DCENT_Report} download="DCENTReport" target='_' className='md:w-60 sm:w-1/2 w-60 mt-12 flex px-8 py-4 bg-black hover:bg-green-500 text-md font-semibold leading-none text-center items-center justify-center text-white dark:bg-green-500 dark:text-black'>
-                            {homeHeroData.recommendations_txt[2]}
+                        <a href={"https://greenscores.xyz/auditoutputs"} className='md:w-60 sm:w-1/2 w-60 mt-12 flex px-8 py-4 bg-black hover:bg-green-500 text-md font-semibold leading-none text-center items-center justify-center text-white dark:bg-green-500 dark:text-black'>
+                            View EVP Results
                         </a>
                     </div>
                     <div className="xl:w-4/6 md:w-1/2 w-full xl:pl-48">

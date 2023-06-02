@@ -7,8 +7,11 @@ import green_energy_img from '../assets/3d_green_electricity.webp'
 // dates
 import DatePicker from "react-multi-date-picker"
 
-// loader:
+// loader
 import ScaleLoader from "react-spinners/ScaleLoader";
+
+// modals
+import TraceableCIDsModal from '../components/TraceableCIDsModal';
 
 const SearchOutputs = () => {
 
@@ -19,16 +22,19 @@ const SearchOutputs = () => {
     const [selectedWater, setSelectedWater] = useState(false);
     const [selectedElectricity, setSelectedElectricity] = useState(false);
     let [color, setColor] = useState("#39FF14");
-
+  
     // Selected data outputs vars:
     const [filteredData, setFilteredData] = React.useState(null);
     let [loading, setLoading] = useState(true);
     const dataLoaded = useRef(false);
+    const [showTraceableCIDModal, setShowTraceableCIDModal] = useState(false);
+    const [traceableCIDData, setTraceableCIDData] = useState(null);
 
     // Handle selections:
     const handleWaterClicked = () => setSelectedWater(!selectedWater)
     const handleElectricityClicked = () => setSelectedElectricity(!selectedElectricity)
     const handleNameSelected = (event) => setSelectedName(event.target.value)
+    const handleTraceableCIDModalOnClose = () => setShowTraceableCIDModal(false);
 
     // Handle Search:
     const handleSearch = (event) => {
@@ -80,7 +86,7 @@ const SearchOutputs = () => {
             allSelection = "All";
             url = `https://sp-outputs-api.vercel.app/api/search/?sp_name=${spName}&record_type=${allSelection}&start_date=${spStartDate}&end_date=${spEndDate}`;
         } 
-
+        console.log(url);
         return url;
     }
 
@@ -97,10 +103,10 @@ const SearchOutputs = () => {
             </div>
 
             {/* Search box & result box */}
-            <div className="p-10 flex flex-row w-full gap-x-10">
+            <div className="p-10 flex flex-col md:flex-row lg:flex-row xl:flex-row w-full gap-x-10">
                 
                 {/* left side */}
-                <div className="p-10 w-1/4 h-full bg-gray-50 border-black border dark:bg-black dark:border dark:border-green-400">
+                <div className="p-10 w-full md:w-1/4 lg:w-1/4 xl:w-1/4 h-full bg-gray-50 border-black border dark:bg-black dark:border dark:border-green-400">
                     <form className='flex' onSubmit={handleSearch}>
                         <div className='flex flex-col justify-center'>
                             <p className='text-md font-semibold dark:text-green-400'>
@@ -198,7 +204,7 @@ const SearchOutputs = () => {
                 </div>
 
                 {/* right sight */}
-                <div className="w-3/4">
+                <div className="w-full mt-5 md:w-3/4 lg:w-3/4 xl:w-3/4">
                     {/* Energy Validation Data */}
                     {!filteredData ? (
                         <div className='text-center justify-center h-screen dark:bg-gray-900'>
@@ -238,25 +244,31 @@ const SearchOutputs = () => {
                                 filteredData.map((result, index) => (
                                     <div className='p-5 border border-black mb-10 shadow-lg bg-gray-50 dark:bg-black dark:border-green-400' key={index}>
                                         {/* Card Title */}
-                                        <div className='flex'>                             
-                                            <div key={index}>
-                                                <h1 className="font-semibold dark:text-green-400">
-                                                        {result["storage_provider_name"]}
+                                        <div key={index} className='flex gap-x-8 items-center'>  
+                                            {/* Title */}
+                                            <h1 className="font-semibold dark:text-green-400">
+                                                {result["storage_provider_name"]}
+                                            </h1>
+
+                                            {/* Traceble CIDs */}
+                                            <button 
+                                                onClick={() => {setShowTraceableCIDModal(true); setTraceableCIDData(result.data_block_cid)}} 
+                                                className='shadow-md bg-green-50 border border-black p-2 dark:border dark:border-green-400 dark:bg-black hover:text-green-300 hover:bg-black hover:dark:bg-white'>
+                                                <h1 className="font-semibold text-xs dark:text-green-500">
+                                                    View Signatures ✅
                                                 </h1>
-                                            </div>
+                                            </button>
                                         </div>
 
                                         {/* Block CID */}
                                         <div className='mt-4 text-xs font-semibold text-black dark:text-black flex grid lg:grid-cols-2 lg:gap-6 md:grid-cols-2 md:gap-6 sm:grid-cols-1 sm:gap-5 xs:grid-cols-1 xs:gap-4'>
-                                            <div className='overflow-hidden p-2 bg-green-100 border border-black'>
-                                                <h1 className="">
-                                                    <Link target={"_blank"} rel="noreferrer" to={`https://explore.ipld.io/#/explore/${result["block_cid"]}`}>
-                                                        Explore Block CID: {result["block_cid"]}
-                                                    </Link>
-                                                </h1>       
+                                            <div className='break-all overflow-hidden p-2 mb-2 bg-green-100 border border-black'>
+                                                <Link target={"_blank"} rel="noreferrer" to={`https://explore.ipld.io/#/explore/${result["block_cid"]}`}>
+                                                    Explore Block CID: {result["block_cid"]}
+                                                </Link>
                                             </div>
 
-                                            <div className='overflow-hidden p-2 bg-blue-100 border border-black'>
+                                            <div className='break-all overflow-hidden p-2 bg-blue-100 border border-black'>
                                                 <Link target={"_blank"} rel="noreferrer" to={`https://explore.ipld.io/#/explore/${result["asset_block_cid"]}`}>
                                                     Explore Asset CID: {result["asset_block_cid"]}
                                                 </Link>   
@@ -265,11 +277,11 @@ const SearchOutputs = () => {
                                     
                                         {/* Mapping Asset Data */}
                                         <div className='mt-4 mb-4'>
-                                            {result.asset.data ? 
+                                            {result.data_asset_block_cid.data ? 
                                                 (
                                                 <div className='grid grid-cols-1 gap-3 gap-x-8 xs:grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2'>
                                                     {
-                                                        result.asset.data.map((result, index) => (
+                                                        result.data_asset_block_cid.data.map((result, index) => (
                                                             <div>
                                                                 <SPAssetResultCard key={index} asset={result}/>                                 
                                                             </div>
@@ -280,7 +292,7 @@ const SearchOutputs = () => {
                                                 (
                                                     <div className='grid grid-cols-1 gap-3 gap-x-8 xs:grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2'>
                                                     {
-                                                        result.asset.map((result, index) => (
+                                                        result.data_asset_block_cid.map((result, index) => (
                                                             <div>
                                                                 <SPAssetResultCard key={index} asset={result}/>                                 
                                                             </div>
@@ -297,6 +309,11 @@ const SearchOutputs = () => {
                     )}
                 </div>
             </div>
+            <TraceableCIDsModal 
+                visible={showTraceableCIDModal}
+                onClose={handleTraceableCIDModalOnClose}
+                data={traceableCIDData}
+            />
         </div>
     ) 
 }

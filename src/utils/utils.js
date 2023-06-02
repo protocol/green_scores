@@ -1,7 +1,7 @@
 // Navigation data:
 export const navbarData = {
     title: "Filecoin Energy Validation Process (EVP)",
-    audit_overview_btn_txt: "EVP Results",
+    audit_overview_btn_txt: "EVPResults",
     home_btn_txt: "Home",
     learn_more_btn_txt: "Learn More",
 }

@@ -3,15 +3,25 @@ import React, {useState, useEffect, useRef} from 'react'
 import SPAssetResultCard from './SPAssetResultCard';
 import { Link } from 'react-router-dom';
 
-// loader:
+// loader
 import ScaleLoader from "react-spinners/ScaleLoader";
+
+// modals
+import TraceableCIDsModal from './TraceableCIDsModal';
 
 const SPAuditDetails = ({storage_provider, record_type}) => {
 
+    // Data vars:
     const [data, setData] = React.useState(null);
-    let [loading, setLoading] = useState(true);
-    let [color, setColor] = useState("#39FF14");
+    const [loading, setLoading] = useState(true);
+    const [color, setColor] = useState("#39FF14");
+    const [showTraceableCIDModal, setShowTraceableCIDModal] = useState(false);
+    const [traceableCIDData, setTraceableCIDData] = useState(null);
 
+    // Handle selections:
+    const handleTraceableCIDModalOnClose = () => setShowTraceableCIDModal(false);
+
+    // Load selected outputs:
     const loadStorageProviderOutputs = () => {
 
         let url = `https://sp-outputs-api.vercel.app/api/storage-provider/?sp_name=${storage_provider}&record_type=${record_type}`;
@@ -98,25 +108,31 @@ const SPAuditDetails = ({storage_provider, record_type}) => {
                                 data.map((result, index) => (
                                     <div className='mt-10 p-5 border border-black shadow-lg bg-gray-50 dark:bg-black dark:border-green-400' key={index}>
                                         {/* Card Title */}
-                                        <div className='flex'>                             
-                                            <div key={index}>
-                                                <h1 className="font-semibold dark:text-green-400">
-                                                        {result["storage_provider_name"]}
+                                        <div key={index} className='flex gap-x-8 items-center'>  
+                                            {/* Title */}
+                                            <h1 className="font-semibold dark:text-green-400">
+                                                {result["storage_provider_name"]}
+                                            </h1>
+
+                                            {/* Traceble CIDs */}
+                                            <button 
+                                                onClick={() => {setShowTraceableCIDModal(true); setTraceableCIDData(result.data_block_cid)}} 
+                                                className='shadow-md bg-green-50 border border-black p-2 dark:border dark:border-green-400 dark:bg-black hover:text-green-300 hover:bg-black hover:dark:bg-white'>
+                                                <h1 className="font-semibold text-xs dark:text-green-500">
+                                                    View Signatures ✅
                                                 </h1>
-                                            </div>
+                                            </button>
                                         </div>
 
                                         {/* Block CID */}
                                         <div className='mt-4 text-xs font-semibold text-black dark:text-black flex grid lg:grid-cols-2 lg:gap-6 md:grid-cols-2 md:gap-6 sm:grid-cols-1 sm:gap-5 xs:grid-cols-1 xs:gap-4'>
-                                            <div className='overflow-hidden p-2 bg-green-100 border border-black'>
-                                                <h1 className="">
-                                                    <Link target={"_blank"} rel="noreferrer" to={`https://explore.ipld.io/#/explore/${result["block_cid"]}`}>
-                                                        Explore Block CID: {result["block_cid"]}
-                                                    </Link>
-                                                </h1>       
+                                            <div className='break-all overflow-hidden p-2 mb-2 bg-green-100 border border-black'>
+                                                <Link target={"_blank"} rel="noreferrer" to={`https://explore.ipld.io/#/explore/${result["block_cid"]}`}>
+                                                    Explore Block CID: {result["block_cid"]}
+                                                </Link>
                                             </div>
 
-                                            <div className='overflow-hidden p-2 bg-blue-100 border border-black'>
+                                            <div className='break-all overflow-hidden p-2 bg-blue-100 border border-black'>
                                                 <Link target={"_blank"} rel="noreferrer" to={`https://explore.ipld.io/#/explore/${result["asset_block_cid"]}`}>
                                                     Explore Asset CID: {result["asset_block_cid"]}
                                                 </Link>   
@@ -125,7 +141,7 @@ const SPAuditDetails = ({storage_provider, record_type}) => {
                                     
                                         {/* Mapping Asset Data */}
                                         <div className='mt-4 mb-4'>
-                                            {result.asset.data ? 
+                                            {result.data_asset_block_cid.data ? 
                                                 (
                                                 <div className='grid grid-cols-1 gap-3 gap-x-8 xs:grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2'>
                                                     {
@@ -140,7 +156,7 @@ const SPAuditDetails = ({storage_provider, record_type}) => {
                                                 (
                                                     <div className='grid grid-cols-1 gap-3 gap-x-8 xs:grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2'>
                                                     {
-                                                        result.asset.map((result, index) => (
+                                                        result.data_asset_block_cid.map((result, index) => (
                                                             <div>
                                                                 <SPAssetResultCard key={index} asset={result}/>                                 
                                                             </div>
@@ -157,6 +173,12 @@ const SPAuditDetails = ({storage_provider, record_type}) => {
                     )}
                 </header>
             </div>
+
+            <TraceableCIDsModal 
+                visible={showTraceableCIDModal}
+                onClose={handleTraceableCIDModalOnClose}
+                data={traceableCIDData}
+            />
         </div>
     )
 }

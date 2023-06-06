@@ -36,7 +36,7 @@ export const sxxData = {
 // Mongo 
 export const mongoData = {
     title: "MongoStorage",
-    image: "/anonymous.png",
+    image: "/mongostorage_logo.png",
     tier: tierData.gold,
 };
 

@@ -62,37 +62,38 @@ const Navbar = () => {
             <nav className="ml-4 mr-4 py-4 px-4 border-b border-black">
                 {/* For large and Medium-sized Screens */}
                 <div className="flex justify-between">
-                    <div className=" flex space-x-3 items-center">
+                    <div className=" flex space-x-4 items-center">
                         <img onClick={() => navigate("/")} src={logo} className="h-12 mr-3 sm:h-12 border-green-500 border-2 shadow-lg hover:cursor-pointer" alt="Filecoin Green Logo"></img>
                         <h1 className="line-clamp-1 font-bold xl:text-xl lg:text-lg md:text-md sm:text-sm leading-6 text-white">{navbarData.title}</h1>
                     </div>
-                    <div className="hidden sm:flex flex flex-row space-x-4 items-center">
+                    <div className="hidden sm:flex flex flex-row space-x-3 items-center">
                         {/* Btn: Audit Overview */}
                         <button onClick={() => navigate("/")} className="text-center break-normal flex px-2 py-2 font-semibold text-xs text-white bg-black border border-white focus:outline-none focus:bg-green-500 hover:bg-green-500 duration-150 justify-center items-center">
-                            {navbarData.home_btn_txt}
+                            <p className="line-clamp-1 ">
+                                {navbarData.home_btn_txt}
+                            </p>
                         </button>
 
                         {/* Btn: Search */}
                         <button onClick={() => navigate("/search")} className="text-center break-normal flex px-2 py-2 font-semibold text-xs text-white bg-black border border-white focus:outline-none focus:bg-green-500 hover:bg-green-500 duration-150 justify-center items-center">
-                            Search
+                            <p className="line-clamp-1 ">
+                                {navbarData.search_btn_txt}
+                            </p>
                         </button>
 
                         {/* Btn: EVP Results */}
                         <button onClick={() => navigate("/auditoutputs")} className="text-center break-normal flex px-2 py-2 font-semibold text-xs text-white bg-black border border-white focus:outline-none focus:bg-green-500 hover:bg-green-500 duration-150 justify-center items-center">
-                            {navbarData.audit_overview_btn_txt}
+                            <p className="line-clamp-1 ">
+                                {navbarData.evp_results_btn_txt}
+                            </p>
                         </button>
 
                         {/* Btn: Validators */}
                         <button onClick={() => navigate("/validators")} className="text-center break-normal flex px-2 py-2 font-semibold text-xs text-white bg-black border border-white focus:outline-none focus:bg-green-500 hover:bg-green-500 duration-150 justify-center items-center">
-                            Validators
+                            <p className="line-clamp-1 ">
+                                {navbarData.validators_btn_txt}
+                            </p>
                         </button>
-
-                        {/* Btn: Learn More */}
-                        {/* <button className="flex p-2 font-semibold break-normal text-xs text-black bg-green-500 border border-green-500 focus:outline-none focus:bg-white focus:text-black justify-center items-center">
-                            <Link to="https://filecoin-green.gitbook.io/filecoin-green-documentation/readme-1/storage-providers-tiered-sustainability-claims">
-                                {navbarData.learn_more_btn_txt}
-                            </Link>
-                        </button> */}
 
                         {/* Theme switch */}
                         <div onClick={toggleTheme} className={`flex h-[30px] w-[60px] rounded-[50px] bg-zinc-100 p-[2.5px] shadow-inner hover:cursor-pointer dark:bg-zinc-700 ${ isOn && 'place-content-end'}`}>
@@ -145,20 +146,14 @@ const Navbar = () => {
                             {navbarData.home_btn_txt}
                         </button>
                         <button onClick={() => navigate("/auditoutputs")} className="flex space-x-2 w-full h-10 font-semibold text-sm leading-3 text-white bg-black border border-white focus:outline-none focus:bg-green-500 hover:bg-green-500 duration-150 justify-center items-center">
-                            {navbarData.audit_overview_btn_txt}
+                            {navbarData.evp_results_btn_txt}
                         </button>
                         <button onClick={() => navigate("/search")} className="flex space-x-2 w-full h-10 font-semibold text-sm leading-3 text-white bg-black border border-white focus:outline-none focus:bg-green-500 hover:bg-green-500 duration-150 justify-center items-center">
-                            Search
+                            {navbarData.search_btn_txt}
                         </button>
                         <button onClick={() => navigate("/validators")} className="flex space-x-2 w-full h-10 font-semibold text-sm leading-3 text-white bg-black border border-white focus:outline-none focus:bg-green-500 hover:bg-green-500 duration-150 justify-center items-center">
-                            Validators
+                            {navbarData.validators_btn_txt}
                         </button>
-
-                        {/* <button className="flex space-x-2 w-full h-10 font-semibold text-sm leading-3 text-white bg-black border border-white focus:outline-none focus:bg-green-500 hover:bg-green-500 duration-150 justify-center items-center">
-                            <Link to="https://filecoin-green.gitbook.io/filecoin-green-documentation/readme-1/storage-providers-tiered-sustainability-claims">
-                                {navbarData.learn_more_btn_txt}
-                            </Link>
-                        </button> */}
                     </div>
                 </div>
             </nav>

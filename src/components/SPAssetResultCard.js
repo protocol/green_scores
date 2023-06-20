@@ -55,11 +55,11 @@ const SPAssetResultCard = ({asset}) => {
                                 </div>
                             )}
                             {(key !== "Renewable Electricity Purchased Documentation" && key !== "minerIDs") && (
-                                <div>
+                                <div>      
                                     {(asset[key] === '') ? (
                                         <div className="flex p-1 bg-white border border-black border-dotted dark:bg-gray-800 dark:border-green-500" key={i}>
                                             <span className='p-1 text-black text-xs dark:text-green-400'>{key} </span>
-                                            <span className='overflow-x-auto p-1 ml-5 text-green-600 text-xs font-semibold dark:text-green-500'>Redacted Data</span>
+                                            <span className='overflow-x-auto p-1 ml-5 text-green-600 text-xs font-semibold dark:text-green-500'>Not Available</span>
                                         </div>
                                     ) : (
                                         <div className="flex p-1 bg-white border border-black border-dotted dark:bg-gray-800 dark:border-green-500" key={i}>

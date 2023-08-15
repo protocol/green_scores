@@ -14,7 +14,7 @@ const AuditOutputsCard = ({data}) => {
     <div>
       <div className="border border-black bg-gray-50 shadow-xl dark:border-green-400 dark:border dark:bg-black">
           <div className='overflow-hidden'>
-            <img className="w-full h-40 aspect-auto bg-black" src={data.image} alt="spimage"></img>
+            <img className="w-full h-40 object-cover bg-black" src={data.image} alt="spimage"></img>
           </div>
             {/* <img className="w-full h-40 aspect-auto bg-black" src={data.image} alt="spimage"></img> */}
             <div className="px-6 py-4">

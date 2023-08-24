@@ -19,8 +19,8 @@ const SearchOutputs = () => {
     const [selectedName, setSelectedName] = useState(null);
     const [selectedStartDate, setSelectedStartDate] = useState(null);
     const [selectedEndDate, setSelectedEndDate] = useState(null);
-    const [selectedWater, setSelectedWater] = useState(false);
-    const [selectedElectricity, setSelectedElectricity] = useState(false);
+    const [selectedWater, setSelectedWater] = useState(true);
+    const [selectedElectricity, setSelectedElectricity] = useState(true);
     let [color, setColor] = useState("#39FF14");
   
     // Selected data outputs vars:
@@ -31,7 +31,7 @@ const SearchOutputs = () => {
     const [traceableCIDData, setTraceableCIDData] = useState(null);
 
     // Handle selections:
-    const handleWaterClicked = () => setSelectedWater(!selectedWater)
+    const handleWaterClicked = () => setSelectedWater(!selectedWater);
     const handleElectricityClicked = () => setSelectedElectricity(!selectedElectricity)
     const handleNameSelected = (event) => setSelectedName(event.target.value)
     const handleTraceableCIDModalOnClose = () => setShowTraceableCIDModal(false);
@@ -170,21 +170,23 @@ const SearchOutputs = () => {
                                 <div className='flex flex-col'>
                                     {/* Water */}
                                     <div className='flex flex-row gap-x-2'>
-                                        <input 
+                                        <input
+                                            id="checkbox_water_records"
                                             onClick={handleWaterClicked} 
                                             className='w-4 h-4 mt-2 border border-gray-300 border dark:bg-white' 
-                                            type="checkbox"/>
-
+                                            type="checkbox"
+                                            defaultChecked={true}/>
                                         <label className="mt-2 text-xs dark:text-white">Water Audit Data</label>
                                     </div>
 
                                     {/* Electricity */}
                                     <div className='flex flex-row gap-x-2'>
-                                        <input 
+                                        <input
+                                            id="checkbox_electricity_records"
                                             onClick={handleElectricityClicked} 
                                             className='w-4 h-4 mt-2 border border-gray-300 border dark:bg-white' 
-                                            type="checkbox"/>
-
+                                            type="checkbox"
+                                            defaultChecked={true}/>
                                         <label className="mt-2 text-xs dark:text-white">Electricity Audit Data</label>
                                     </div>
                                 </div>

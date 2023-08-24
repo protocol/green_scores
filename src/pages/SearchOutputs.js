@@ -17,10 +17,10 @@ const SearchOutputs = () => {
 
     // Selected data vars:
     const [selectedName, setSelectedName] = useState(null);
-    const [selectedStartDate, setSelectedStartDate] = useState(null);
-    const [selectedEndDate, setSelectedEndDate] = useState(null);
-    const [selectedWater, setSelectedWater] = useState(false);
-    const [selectedElectricity, setSelectedElectricity] = useState(false);
+    const [selectedWater, setSelectedWater] = useState(true);
+    const [selectedElectricity, setSelectedElectricity] = useState(true);
+    let [selectedStartDate, setSelectedStartDate] = useState("");
+    let [selectedEndDate, setSelectedEndDate] = useState("");
     let [color, setColor] = useState("#39FF14");
   
     // Selected data outputs vars:
@@ -31,17 +31,23 @@ const SearchOutputs = () => {
     const [traceableCIDData, setTraceableCIDData] = useState(null);
 
     // Handle selections:
-    const handleWaterClicked = () => setSelectedWater(!selectedWater)
+    const handleWaterClicked = () => setSelectedWater(!selectedWater);
     const handleElectricityClicked = () => setSelectedElectricity(!selectedElectricity)
     const handleNameSelected = (event) => setSelectedName(event.target.value)
     const handleTraceableCIDModalOnClose = () => setShowTraceableCIDModal(false);
 
     // Handle Search:
     const handleSearch = (event) => {
+        if(selectedStartDate === ""){
+            selectedStartDate = "2000-01-01";
+        }
+        
+        if(selectedEndDate === ""){
+            selectedEndDate = new Date().getUTCFullYear() + "-" + (new Date().getUTCMonth() + 1) + "-" + new Date().getUTCDate();
+        }
 
         let startDateFormatted = selectedStartDate.toString().replace(/\//g,'-');
         let endDateFormatted = selectedEndDate.toString().replace(/\//g,'-');
-
         loadStorageProviderOutputs(selectedName, startDateFormatted, endDateFormatted, selectedWater, selectedElectricity);
 
         if (!dataLoaded.current) {
@@ -52,9 +58,7 @@ const SearchOutputs = () => {
 
     // Load storage provider data:
     const loadStorageProviderOutputs = (spName, spStartDate, spEndDate, spWaterRecord, spElectricityRecord) => {
-        
         let searchURL = getURL(spName, spStartDate, spEndDate, spWaterRecord, spElectricityRecord);
-
         console.log(searchURL);
        
         fetch(searchURL)
@@ -69,10 +73,10 @@ const SearchOutputs = () => {
 
     // Creates URL search endpoint:
     const getURL = (spName, spStartDate, spEndDate, spWaterRecord, spElectricityRecord) => {
-
         let water, electricity, allSelection, url = null;
-        
+    
         if(spWaterRecord && !spElectricityRecord){
+
             water = "Water Audit Data";
             url = `https://sp-outputs-api.vercel.app/api/search/?sp_name=${spName}&record_type=${water}&start_date=${spStartDate}&end_date=${spEndDate}`;
         } 
@@ -127,7 +131,7 @@ const SearchOutputs = () => {
                                     Enter Start Date:
                                 </p>
                                 
-                                <DatePicker 
+                                <DatePicker
                                     value={selectedStartDate}
                                     onChange={setSelectedStartDate}
                                     style={{
@@ -170,21 +174,23 @@ const SearchOutputs = () => {
                                 <div className='flex flex-col'>
                                     {/* Water */}
                                     <div className='flex flex-row gap-x-2'>
-                                        <input 
+                                        <input
+                                            id="checkbox_water_records"
                                             onClick={handleWaterClicked} 
                                             className='w-4 h-4 mt-2 border border-gray-300 border dark:bg-white' 
-                                            type="checkbox"/>
-
+                                            type="checkbox"
+                                            defaultChecked={true}/>
                                         <label className="mt-2 text-xs dark:text-white">Water Audit Data</label>
                                     </div>
 
                                     {/* Electricity */}
                                     <div className='flex flex-row gap-x-2'>
-                                        <input 
+                                        <input
+                                            id="checkbox_electricity_records"
                                             onClick={handleElectricityClicked} 
                                             className='w-4 h-4 mt-2 border border-gray-300 border dark:bg-white' 
-                                            type="checkbox"/>
-
+                                            type="checkbox"
+                                            defaultChecked={true}/>
                                         <label className="mt-2 text-xs dark:text-white">Electricity Audit Data</label>
                                     </div>
                                 </div>

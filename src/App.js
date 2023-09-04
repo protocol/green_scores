@@ -12,6 +12,7 @@ import SPAuditOutput from "./components/SPAuditOutput";
 // pages
 import SearchOutputs from "./pages/SearchOutputs";
 import ValidatorsView from "./pages/ValidatorsView";
+import Calculator from "./pages/Calculator";
 
 function App() {
 
@@ -33,6 +34,8 @@ function App() {
           {/* Validators */}
           <Route path="/validators" exact element={<ValidatorsView/>}/>
 
+          {/* Calculator */}
+          <Route path="/calculator/:CID" exact element={<Calculator/>}/>
       </Routes>
     </div>
     </>

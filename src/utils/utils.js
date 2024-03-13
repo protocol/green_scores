@@ -1,6 +1,6 @@
 // Navigation data:
 export const navbarData = {
-    title: "Filecoin Energy Validation Process (EVP)",
+    title: "Filecoin Energy Validation Process",
     evp_results_btn_txt: "EVP Results",
     home_btn_txt: "Home",
     learn_more_btn_txt: "Learn",
@@ -11,13 +11,16 @@ export const navbarData = {
 // Hero data:
 // Audit Hero Section:
 export const homeHeroData = {
-    title: ["2022", " Energy Validation Results"],
+    title: ["2022", " Energy Validation Results", "We Have Moved!"],
     description: [
         "To generate the sustainibility claim tier, we survey Storage Providers by reviewing & validating their provided documents against our sustainability matrix.",
-        "Learn About Green Scores"
+        "Learn More",
+        "Our journey has evolved, leading us to a new frontier. This move isn't just a change in address; it's a leap into a future where technology and sustainability converge.",
+        "Discover Whats Next @ Nova Energy 🥳"
+
     ],
     audit_requirements : {
-        title: "Energy Validation Requirements",
+        title: "Energy Validation Process",
         description: "To meet the requirements set forth in the Filecoin Green Pledge:", 
         requirements: [
             {
@@ -49,5 +52,5 @@ export const homeHeroData = {
 // Links: 
 export const links = {
     sustainability_tiers: "https://filecoin-green.gitbook.io/filecoin-green-documentation/readme-1/storage-providers-tiered-sustainability-claims",
-
+    new_website: "https://novaenergy.ai",
 }

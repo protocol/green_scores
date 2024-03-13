@@ -75,18 +75,18 @@ const Navbar = () => {
                         </button>
 
                         {/* Btn: Search */}
-                        <button onClick={() => navigate("/search")} className="text-center break-normal flex px-2 py-2 font-semibold text-xs text-white bg-black border border-white focus:outline-none focus:bg-green-500 hover:bg-green-500 duration-150 justify-center items-center">
+                        {/* <button onClick={() => navigate("/search")} className="text-center break-normal flex px-2 py-2 font-semibold text-xs text-white bg-black border border-white focus:outline-none focus:bg-green-500 hover:bg-green-500 duration-150 justify-center items-center">
                             <p className="line-clamp-1 ">
                                 {navbarData.search_btn_txt}
                             </p>
-                        </button>
+                        </button> */}
 
                         {/* Btn: EVP Results */}
-                        <button onClick={() => navigate("/auditoutputs")} className="text-center break-normal flex px-2 py-2 font-semibold text-xs text-white bg-black border border-white focus:outline-none focus:bg-green-500 hover:bg-green-500 duration-150 justify-center items-center">
+                        {/* <button onClick={() => navigate("/auditoutputs")} className="text-center break-normal flex px-2 py-2 font-semibold text-xs text-white bg-black border border-white focus:outline-none focus:bg-green-500 hover:bg-green-500 duration-150 justify-center items-center">
                             <p className="line-clamp-1 ">
                                 {navbarData.evp_results_btn_txt}
                             </p>
-                        </button>
+                        </button> */}
 
                         {/* Btn: Validators */}
                         <button onClick={() => navigate("/validators")} className="text-center break-normal flex px-2 py-2 font-semibold text-xs text-white bg-black border border-white focus:outline-none focus:bg-green-500 hover:bg-green-500 duration-150 justify-center items-center">
@@ -145,12 +145,12 @@ const Navbar = () => {
                         <button onClick={() => navigate("/")} className="flex space-x-2 w-full h-10 font-semibold text-sm leading-3 text-white bg-black border border-white focus:outline-none focus:bg-green-500 hover:bg-green-500 duration-150 justify-center items-center">
                             {navbarData.home_btn_txt}
                         </button>
-                        <button onClick={() => navigate("/auditoutputs")} className="flex space-x-2 w-full h-10 font-semibold text-sm leading-3 text-white bg-black border border-white focus:outline-none focus:bg-green-500 hover:bg-green-500 duration-150 justify-center items-center">
+                        {/* <button onClick={() => navigate("/auditoutputs")} className="flex space-x-2 w-full h-10 font-semibold text-sm leading-3 text-white bg-black border border-white focus:outline-none focus:bg-green-500 hover:bg-green-500 duration-150 justify-center items-center">
                             {navbarData.evp_results_btn_txt}
                         </button>
                         <button onClick={() => navigate("/search")} className="flex space-x-2 w-full h-10 font-semibold text-sm leading-3 text-white bg-black border border-white focus:outline-none focus:bg-green-500 hover:bg-green-500 duration-150 justify-center items-center">
                             {navbarData.search_btn_txt}
-                        </button>
+                        </button> */}
                         <button onClick={() => navigate("/validators")} className="flex space-x-2 w-full h-10 font-semibold text-sm leading-3 text-white bg-black border border-white focus:outline-none focus:bg-green-500 hover:bg-green-500 duration-150 justify-center items-center">
                             {navbarData.validators_btn_txt}
                         </button>

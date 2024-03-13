@@ -36,7 +36,7 @@ const Hero = () => {
                         </p>
                         <div className="mt-8">
                             <Link to={links.new_website}>
-                                <button className="flex items-center p-4 text-sm text-start font-medium leading-5 text-white bg-black border border-green-300 shadow-md dark:border-white dark:text-white focus:bg-green-500 hover:bg-green-500 duration-150">
+                                <button className="flex items-center p-3 text-sm text-start font-medium leading-5 text-white bg-black border border-green-300 shadow-md dark:border-white dark:text-white focus:bg-green-500 hover:bg-green-500 duration-150">
                                     {homeHeroData.description[1]}
                                 </button>
                             </Link>
